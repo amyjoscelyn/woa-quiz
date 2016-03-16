@@ -8,15 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		3D0629F91C9A04B200621B4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0629F81C9A04B200621B4E /* main.m */; };
-		3D062A041C9A04B200621B4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A031C9A04B200621B4E /* Assets.xcassets */; };
 		3D062A071C9A04B200621B4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A051C9A04B200621B4E /* LaunchScreen.storyboard */; };
 		3D062A121C9A04B200621B4E /* WoAQuizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A111C9A04B200621B4E /* WoAQuizTests.m */; };
 		3D062A1D1C9A04B200621B4E /* WoAQuizUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A1C1C9A04B200621B4E /* WoAQuizUITests.m */; };
-		3D062A2B1C9A055700621B4E /* DreamGame in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A2A1C9A055700621B4E /* DreamGame */; };
 		3D062A311C9A069A00621B4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A301C9A069A00621B4E /* AppDelegate.m */; };
 		3D062A3C1C9A074500621B4E /* AMYStoryDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A391C9A074500621B4E /* AMYStoryDataStore.m */; };
 		3D062A3D1C9A074500621B4E /* ZhuLi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A3B1C9A074500621B4E /* ZhuLi.m */; };
 		3D062A421C9A07D700621B4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A411C9A07D700621B4E /* Main.storyboard */; };
+		3D062A4D1C9A088400621B4E /* AMYMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A4A1C9A088400621B4E /* AMYMainTableViewController.m */; };
+		3D062A4E1C9A088400621B4E /* DreamGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A4B1C9A088400621B4E /* DreamGame.xcdatamodeld */; };
+		3D062A521C9A08E600621B4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A511C9A08E600621B4E /* Images.xcassets */; };
+		3D062A571C9A092A00621B4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A561C9A092A00621B4E /* LaunchScreen.xib */; };
+		3D062A941C9A0A5900621B4E /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A7D1C9A0A5900621B4E /* Character.m */; };
+		3D062A951C9A0A5900621B4E /* Character+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A7F1C9A0A5900621B4E /* Character+CoreDataProperties.m */; };
+		3D062A961C9A0A5900621B4E /* Choice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A811C9A0A5900621B4E /* Choice.m */; };
+		3D062A971C9A0A5900621B4E /* Choice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A831C9A0A5900621B4E /* Choice+CoreDataProperties.m */; };
+		3D062A981C9A0A5900621B4E /* Effect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A851C9A0A5900621B4E /* Effect.m */; };
+		3D062A991C9A0A5900621B4E /* Effect+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A871C9A0A5900621B4E /* Effect+CoreDataProperties.m */; };
+		3D062A9A1C9A0A5900621B4E /* Playthrough.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A891C9A0A5900621B4E /* Playthrough.m */; };
+		3D062A9B1C9A0A5900621B4E /* Playthrough+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A8B1C9A0A5900621B4E /* Playthrough+CoreDataProperties.m */; };
+		3D062A9C1C9A0A5900621B4E /* Prerequisite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A8D1C9A0A5900621B4E /* Prerequisite.m */; };
+		3D062A9D1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A8F1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.m */; };
+		3D062A9E1C9A0A5900621B4E /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A911C9A0A5900621B4E /* Question.m */; };
+		3D062A9F1C9A0A5900621B4E /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A931C9A0A5900621B4E /* Question+CoreDataProperties.m */; };
+		BA4A8ABD5AB56FDBC613BDE8 /* libPods-WoAQuiz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B010E7E94D7CDEB67BDB6C5 /* libPods-WoAQuiz.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +54,6 @@
 /* Begin PBXFileReference section */
 		3D0629F41C9A04B200621B4E /* WoAQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoAQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0629F81C9A04B200621B4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3D062A031C9A04B200621B4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D062A061C9A04B200621B4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D062A081C9A04B200621B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D062A0D1C9A04B200621B4E /* WoAQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoAQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +62,6 @@
 		3D062A181C9A04B200621B4E /* WoAQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoAQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D062A1C1C9A04B200621B4E /* WoAQuizUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoAQuizUITests.m; sourceTree = "<group>"; };
 		3D062A1E1C9A04B200621B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D062A2A1C9A055700621B4E /* DreamGame */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DreamGame; sourceTree = "<group>"; };
 		3D062A2F1C9A069A00621B4E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D062A301C9A069A00621B4E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3D062A381C9A074500621B4E /* AMYStoryDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMYStoryDataStore.h; path = "../../../../../On-the-Back-Burner/Dream/dream-game/DreamGame/DreamGame/AMYStoryDataStore.h"; sourceTree = "<group>"; };
@@ -56,6 +69,38 @@
 		3D062A3A1C9A074500621B4E /* ZhuLi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZhuLi.h; path = "../../../../../On-the-Back-Burner/Dream/dream-game/DreamGame/DreamGame/ZhuLi.h"; sourceTree = "<group>"; };
 		3D062A3B1C9A074500621B4E /* ZhuLi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZhuLi.m; path = "../../../../../On-the-Back-Burner/Dream/dream-game/DreamGame/DreamGame/ZhuLi.m"; sourceTree = "<group>"; };
 		3D062A411C9A07D700621B4E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3D062A491C9A088400621B4E /* AMYMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYMainTableViewController.h; sourceTree = "<group>"; };
+		3D062A4A1C9A088400621B4E /* AMYMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYMainTableViewController.m; sourceTree = "<group>"; };
+		3D062A4C1C9A088400621B4E /* DreamGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamGame.xcdatamodel; sourceTree = "<group>"; };
+		3D062A511C9A08E600621B4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3D062A561C9A092A00621B4E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		3D062A7C1C9A0A5900621B4E /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		3D062A7D1C9A0A5900621B4E /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		3D062A7E1C9A0A5900621B4E /* Character+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Character+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D062A7F1C9A0A5900621B4E /* Character+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Character+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D062A801C9A0A5900621B4E /* Choice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Choice.h; sourceTree = "<group>"; };
+		3D062A811C9A0A5900621B4E /* Choice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Choice.m; sourceTree = "<group>"; };
+		3D062A821C9A0A5900621B4E /* Choice+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Choice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D062A831C9A0A5900621B4E /* Choice+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Choice+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D062A841C9A0A5900621B4E /* Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect.h; sourceTree = "<group>"; };
+		3D062A851C9A0A5900621B4E /* Effect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect.m; sourceTree = "<group>"; };
+		3D062A861C9A0A5900621B4E /* Effect+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Effect+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D062A871C9A0A5900621B4E /* Effect+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Effect+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D062A881C9A0A5900621B4E /* Playthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Playthrough.h; sourceTree = "<group>"; };
+		3D062A891C9A0A5900621B4E /* Playthrough.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Playthrough.m; sourceTree = "<group>"; };
+		3D062A8A1C9A0A5900621B4E /* Playthrough+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Playthrough+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D062A8B1C9A0A5900621B4E /* Playthrough+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Playthrough+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D062A8C1C9A0A5900621B4E /* Prerequisite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prerequisite.h; sourceTree = "<group>"; };
+		3D062A8D1C9A0A5900621B4E /* Prerequisite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prerequisite.m; sourceTree = "<group>"; };
+		3D062A8E1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Prerequisite+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D062A8F1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Prerequisite+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D062A901C9A0A5900621B4E /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		3D062A911C9A0A5900621B4E /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		3D062A921C9A0A5900621B4E /* Question+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Question+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D062A931C9A0A5900621B4E /* Question+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Question+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4388F4E546F95B3FF33D057D /* Pods-WoAQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoAQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoAQuiz/Pods-WoAQuiz.release.xcconfig"; sourceTree = "<group>"; };
+		6B010E7E94D7CDEB67BDB6C5 /* libPods-WoAQuiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WoAQuiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07D76549A13A0865D74BA0C /* Pods-WoAQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoAQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoAQuiz/Pods-WoAQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4A8ABD5AB56FDBC613BDE8 /* libPods-WoAQuiz.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +136,8 @@
 				3D062A101C9A04B200621B4E /* WoAQuizTests */,
 				3D062A1B1C9A04B200621B4E /* WoAQuizUITests */,
 				3D0629F51C9A04B200621B4E /* Products */,
+				A5A80B4F5F56FD6E1411642B /* Pods */,
+				BDD70B5820AE4123E712D762 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,11 +161,15 @@
 				3D062A3A1C9A074500621B4E /* ZhuLi.h */,
 				3D062A3B1C9A074500621B4E /* ZhuLi.m */,
 				3D062A411C9A07D700621B4E /* Main.storyboard */,
-				3D062A2A1C9A055700621B4E /* DreamGame */,
-				3D062A031C9A04B200621B4E /* Assets.xcassets */,
-				3D062A051C9A04B200621B4E /* LaunchScreen.storyboard */,
-				3D062A081C9A04B200621B4E /* Info.plist */,
+				3D062A491C9A088400621B4E /* AMYMainTableViewController.h */,
+				3D062A4A1C9A088400621B4E /* AMYMainTableViewController.m */,
+				3D062A4B1C9A088400621B4E /* DreamGame.xcdatamodeld */,
+				3D062A511C9A08E600621B4E /* Images.xcassets */,
+				3D062AA01C9A0A7A00621B4E /* Managed Objects */,
+				3D062A561C9A092A00621B4E /* LaunchScreen.xib */,
+				3D062AB11C9A0B2700621B4E /* CSVs */,
 				3D0629F71C9A04B200621B4E /* Supporting Files */,
+				3D062A051C9A04B200621B4E /* LaunchScreen.storyboard */,
 			);
 			path = WoAQuiz;
 			sourceTree = "<group>";
@@ -125,6 +177,7 @@
 		3D0629F71C9A04B200621B4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D062A081C9A04B200621B4E /* Info.plist */,
 				3D0629F81C9A04B200621B4E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -148,6 +201,61 @@
 			path = WoAQuizUITests;
 			sourceTree = "<group>";
 		};
+		3D062AA01C9A0A7A00621B4E /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3D062A7C1C9A0A5900621B4E /* Character.h */,
+				3D062A7D1C9A0A5900621B4E /* Character.m */,
+				3D062A7E1C9A0A5900621B4E /* Character+CoreDataProperties.h */,
+				3D062A7F1C9A0A5900621B4E /* Character+CoreDataProperties.m */,
+				3D062A801C9A0A5900621B4E /* Choice.h */,
+				3D062A811C9A0A5900621B4E /* Choice.m */,
+				3D062A821C9A0A5900621B4E /* Choice+CoreDataProperties.h */,
+				3D062A831C9A0A5900621B4E /* Choice+CoreDataProperties.m */,
+				3D062A841C9A0A5900621B4E /* Effect.h */,
+				3D062A851C9A0A5900621B4E /* Effect.m */,
+				3D062A861C9A0A5900621B4E /* Effect+CoreDataProperties.h */,
+				3D062A871C9A0A5900621B4E /* Effect+CoreDataProperties.m */,
+				3D062A881C9A0A5900621B4E /* Playthrough.h */,
+				3D062A891C9A0A5900621B4E /* Playthrough.m */,
+				3D062A8A1C9A0A5900621B4E /* Playthrough+CoreDataProperties.h */,
+				3D062A8B1C9A0A5900621B4E /* Playthrough+CoreDataProperties.m */,
+				3D062A8C1C9A0A5900621B4E /* Prerequisite.h */,
+				3D062A8D1C9A0A5900621B4E /* Prerequisite.m */,
+				3D062A8E1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.h */,
+				3D062A8F1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.m */,
+				3D062A901C9A0A5900621B4E /* Question.h */,
+				3D062A911C9A0A5900621B4E /* Question.m */,
+				3D062A921C9A0A5900621B4E /* Question+CoreDataProperties.h */,
+				3D062A931C9A0A5900621B4E /* Question+CoreDataProperties.m */,
+			);
+			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
+		3D062AB11C9A0B2700621B4E /* CSVs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CSVs;
+			sourceTree = "<group>";
+		};
+		A5A80B4F5F56FD6E1411642B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E07D76549A13A0865D74BA0C /* Pods-WoAQuiz.debug.xcconfig */,
+				4388F4E546F95B3FF33D057D /* Pods-WoAQuiz.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BDD70B5820AE4123E712D762 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B010E7E94D7CDEB67BDB6C5 /* libPods-WoAQuiz.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D062A211C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuiz" */;
 			buildPhases = (
+				F306D2EBF8316D5B18263B0C /* Check Pods Manifest.lock */,
 				3D0629F01C9A04B200621B4E /* Sources */,
 				3D0629F11C9A04B200621B4E /* Frameworks */,
 				3D0629F21C9A04B200621B4E /* Resources */,
+				63C8F2A514E381E680DB9B1C /* Embed Pods Frameworks */,
+				5C035265EDEA8364AB956DEE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,10 +362,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D062A2B1C9A055700621B4E /* DreamGame in Resources */,
 				3D062A421C9A07D700621B4E /* Main.storyboard in Resources */,
+				3D062A521C9A08E600621B4E /* Images.xcassets in Resources */,
+				3D062A571C9A092A00621B4E /* LaunchScreen.xib in Resources */,
 				3D062A071C9A04B200621B4E /* LaunchScreen.storyboard in Resources */,
-				3D062A041C9A04B200621B4E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,15 +385,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C035265EDEA8364AB956DEE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoAQuiz/Pods-WoAQuiz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63C8F2A514E381E680DB9B1C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoAQuiz/Pods-WoAQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F306D2EBF8316D5B18263B0C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D0629F01C9A04B200621B4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3D062A3D1C9A074500621B4E /* ZhuLi.m in Sources */,
+				3D062A951C9A0A5900621B4E /* Character+CoreDataProperties.m in Sources */,
+				3D062A9B1C9A0A5900621B4E /* Playthrough+CoreDataProperties.m in Sources */,
+				3D062A4E1C9A088400621B4E /* DreamGame.xcdatamodeld in Sources */,
+				3D062A971C9A0A5900621B4E /* Choice+CoreDataProperties.m in Sources */,
 				3D0629F91C9A04B200621B4E /* main.m in Sources */,
 				3D062A3C1C9A074500621B4E /* AMYStoryDataStore.m in Sources */,
+				3D062A941C9A0A5900621B4E /* Character.m in Sources */,
+				3D062A9E1C9A0A5900621B4E /* Question.m in Sources */,
+				3D062A9C1C9A0A5900621B4E /* Prerequisite.m in Sources */,
+				3D062A9D1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.m in Sources */,
 				3D062A311C9A069A00621B4E /* AppDelegate.m in Sources */,
+				3D062A961C9A0A5900621B4E /* Choice.m in Sources */,
+				3D062A9A1C9A0A5900621B4E /* Playthrough.m in Sources */,
+				3D062A4D1C9A088400621B4E /* AMYMainTableViewController.m in Sources */,
+				3D062A9F1C9A0A5900621B4E /* Question+CoreDataProperties.m in Sources */,
+				3D062A991C9A0A5900621B4E /* Effect+CoreDataProperties.m in Sources */,
+				3D062A981C9A0A5900621B4E /* Effect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +586,7 @@
 		};
 		3D062A221C9A04B200621B4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07D76549A13A0865D74BA0C /* Pods-WoAQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WoAQuiz/Info.plist;
@@ -425,6 +599,7 @@
 		};
 		3D062A231C9A04B200621B4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4388F4E546F95B3FF33D057D /* Pods-WoAQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WoAQuiz/Info.plist;
@@ -502,6 +677,7 @@
 				3D062A231C9A04B200621B4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D062A241C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuizTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +686,7 @@
 				3D062A261C9A04B200621B4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D062A271C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,8 +695,22 @@
 				3D062A291C9A04B200621B4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3D062A4B1C9A088400621B4E /* DreamGame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3D062A4C1C9A088400621B4E /* DreamGame.xcdatamodel */,
+			);
+			currentVersion = 3D062A4C1C9A088400621B4E /* DreamGame.xcdatamodel */;
+			path = DreamGame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3D0629EC1C9A04B200621B4E /* Project object */;
 }
