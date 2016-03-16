@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D0629F91C9A04B200621B4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0629F81C9A04B200621B4E /* main.m */; };
+		3D062A041C9A04B200621B4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A031C9A04B200621B4E /* Assets.xcassets */; };
+		3D062A071C9A04B200621B4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A051C9A04B200621B4E /* LaunchScreen.storyboard */; };
+		3D062A121C9A04B200621B4E /* WoAQuizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A111C9A04B200621B4E /* WoAQuizTests.m */; };
+		3D062A1D1C9A04B200621B4E /* WoAQuizUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A1C1C9A04B200621B4E /* WoAQuizUITests.m */; };
+		3D062A2B1C9A055700621B4E /* DreamGame in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A2A1C9A055700621B4E /* DreamGame */; };
+		3D062A311C9A069A00621B4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A301C9A069A00621B4E /* AppDelegate.m */; };
+		3D062A3C1C9A074500621B4E /* AMYStoryDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A391C9A074500621B4E /* AMYStoryDataStore.m */; };
+		3D062A3D1C9A074500621B4E /* ZhuLi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A3B1C9A074500621B4E /* ZhuLi.m */; };
+		3D062A421C9A07D700621B4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D062A411C9A07D700621B4E /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D062A0E1C9A04B200621B4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D0629EC1C9A04B200621B4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D0629F31C9A04B200621B4E;
+			remoteInfo = WoAQuiz;
+		};
+		3D062A191C9A04B200621B4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D0629EC1C9A04B200621B4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D0629F31C9A04B200621B4E;
+			remoteInfo = WoAQuiz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D0629F41C9A04B200621B4E /* WoAQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoAQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0629F81C9A04B200621B4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D062A031C9A04B200621B4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D062A061C9A04B200621B4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D062A081C9A04B200621B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D062A0D1C9A04B200621B4E /* WoAQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoAQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D062A111C9A04B200621B4E /* WoAQuizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoAQuizTests.m; sourceTree = "<group>"; };
+		3D062A131C9A04B200621B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D062A181C9A04B200621B4E /* WoAQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoAQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D062A1C1C9A04B200621B4E /* WoAQuizUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoAQuizUITests.m; sourceTree = "<group>"; };
+		3D062A1E1C9A04B200621B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D062A2A1C9A055700621B4E /* DreamGame */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DreamGame; sourceTree = "<group>"; };
+		3D062A2F1C9A069A00621B4E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3D062A301C9A069A00621B4E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3D062A381C9A074500621B4E /* AMYStoryDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMYStoryDataStore.h; path = "../../../../../On-the-Back-Burner/Dream/dream-game/DreamGame/DreamGame/AMYStoryDataStore.h"; sourceTree = "<group>"; };
+		3D062A391C9A074500621B4E /* AMYStoryDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMYStoryDataStore.m; path = "../../../../../On-the-Back-Burner/Dream/dream-game/DreamGame/DreamGame/AMYStoryDataStore.m"; sourceTree = "<group>"; };
+		3D062A3A1C9A074500621B4E /* ZhuLi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZhuLi.h; path = "../../../../../On-the-Back-Burner/Dream/dream-game/DreamGame/DreamGame/ZhuLi.h"; sourceTree = "<group>"; };
+		3D062A3B1C9A074500621B4E /* ZhuLi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZhuLi.m; path = "../../../../../On-the-Back-Burner/Dream/dream-game/DreamGame/DreamGame/ZhuLi.m"; sourceTree = "<group>"; };
+		3D062A411C9A07D700621B4E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D0629F11C9A04B200621B4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D062A0A1C9A04B200621B4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D062A151C9A04B200621B4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D0629EB1C9A04B200621B4E = {
+			isa = PBXGroup;
+			children = (
+				3D0629F61C9A04B200621B4E /* WoAQuiz */,
+				3D062A101C9A04B200621B4E /* WoAQuizTests */,
+				3D062A1B1C9A04B200621B4E /* WoAQuizUITests */,
+				3D0629F51C9A04B200621B4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D0629F51C9A04B200621B4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D0629F41C9A04B200621B4E /* WoAQuiz.app */,
+				3D062A0D1C9A04B200621B4E /* WoAQuizTests.xctest */,
+				3D062A181C9A04B200621B4E /* WoAQuizUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D0629F61C9A04B200621B4E /* WoAQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				3D062A2F1C9A069A00621B4E /* AppDelegate.h */,
+				3D062A301C9A069A00621B4E /* AppDelegate.m */,
+				3D062A381C9A074500621B4E /* AMYStoryDataStore.h */,
+				3D062A391C9A074500621B4E /* AMYStoryDataStore.m */,
+				3D062A3A1C9A074500621B4E /* ZhuLi.h */,
+				3D062A3B1C9A074500621B4E /* ZhuLi.m */,
+				3D062A411C9A07D700621B4E /* Main.storyboard */,
+				3D062A2A1C9A055700621B4E /* DreamGame */,
+				3D062A031C9A04B200621B4E /* Assets.xcassets */,
+				3D062A051C9A04B200621B4E /* LaunchScreen.storyboard */,
+				3D062A081C9A04B200621B4E /* Info.plist */,
+				3D0629F71C9A04B200621B4E /* Supporting Files */,
+			);
+			path = WoAQuiz;
+			sourceTree = "<group>";
+		};
+		3D0629F71C9A04B200621B4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D0629F81C9A04B200621B4E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D062A101C9A04B200621B4E /* WoAQuizTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D062A111C9A04B200621B4E /* WoAQuizTests.m */,
+				3D062A131C9A04B200621B4E /* Info.plist */,
+			);
+			path = WoAQuizTests;
+			sourceTree = "<group>";
+		};
+		3D062A1B1C9A04B200621B4E /* WoAQuizUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D062A1C1C9A04B200621B4E /* WoAQuizUITests.m */,
+				3D062A1E1C9A04B200621B4E /* Info.plist */,
+			);
+			path = WoAQuizUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D0629F31C9A04B200621B4E /* WoAQuiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D062A211C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuiz" */;
+			buildPhases = (
+				3D0629F01C9A04B200621B4E /* Sources */,
+				3D0629F11C9A04B200621B4E /* Frameworks */,
+				3D0629F21C9A04B200621B4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WoAQuiz;
+			productName = WoAQuiz;
+			productReference = 3D0629F41C9A04B200621B4E /* WoAQuiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D062A0C1C9A04B200621B4E /* WoAQuizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D062A241C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuizTests" */;
+			buildPhases = (
+				3D062A091C9A04B200621B4E /* Sources */,
+				3D062A0A1C9A04B200621B4E /* Frameworks */,
+				3D062A0B1C9A04B200621B4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D062A0F1C9A04B200621B4E /* PBXTargetDependency */,
+			);
+			name = WoAQuizTests;
+			productName = WoAQuizTests;
+			productReference = 3D062A0D1C9A04B200621B4E /* WoAQuizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D062A171C9A04B200621B4E /* WoAQuizUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D062A271C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuizUITests" */;
+			buildPhases = (
+				3D062A141C9A04B200621B4E /* Sources */,
+				3D062A151C9A04B200621B4E /* Frameworks */,
+				3D062A161C9A04B200621B4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D062A1A1C9A04B200621B4E /* PBXTargetDependency */,
+			);
+			name = WoAQuizUITests;
+			productName = WoAQuizUITests;
+			productReference = 3D062A181C9A04B200621B4E /* WoAQuizUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D0629EC1C9A04B200621B4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Amy Joscelyn";
+				TargetAttributes = {
+					3D0629F31C9A04B200621B4E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					3D062A0C1C9A04B200621B4E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 3D0629F31C9A04B200621B4E;
+					};
+					3D062A171C9A04B200621B4E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 3D0629F31C9A04B200621B4E;
+					};
+				};
+			};
+			buildConfigurationList = 3D0629EF1C9A04B200621B4E /* Build configuration list for PBXProject "WoAQuiz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D0629EB1C9A04B200621B4E;
+			productRefGroup = 3D0629F51C9A04B200621B4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D0629F31C9A04B200621B4E /* WoAQuiz */,
+				3D062A0C1C9A04B200621B4E /* WoAQuizTests */,
+				3D062A171C9A04B200621B4E /* WoAQuizUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D0629F21C9A04B200621B4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D062A2B1C9A055700621B4E /* DreamGame in Resources */,
+				3D062A421C9A07D700621B4E /* Main.storyboard in Resources */,
+				3D062A071C9A04B200621B4E /* LaunchScreen.storyboard in Resources */,
+				3D062A041C9A04B200621B4E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D062A0B1C9A04B200621B4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D062A161C9A04B200621B4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D0629F01C9A04B200621B4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D062A3D1C9A074500621B4E /* ZhuLi.m in Sources */,
+				3D0629F91C9A04B200621B4E /* main.m in Sources */,
+				3D062A3C1C9A074500621B4E /* AMYStoryDataStore.m in Sources */,
+				3D062A311C9A069A00621B4E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D062A091C9A04B200621B4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D062A121C9A04B200621B4E /* WoAQuizTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D062A141C9A04B200621B4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D062A1D1C9A04B200621B4E /* WoAQuizUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D062A0F1C9A04B200621B4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D0629F31C9A04B200621B4E /* WoAQuiz */;
+			targetProxy = 3D062A0E1C9A04B200621B4E /* PBXContainerItemProxy */;
+		};
+		3D062A1A1C9A04B200621B4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D0629F31C9A04B200621B4E /* WoAQuiz */;
+			targetProxy = 3D062A191C9A04B200621B4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D062A051C9A04B200621B4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D062A061C9A04B200621B4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D062A1F1C9A04B200621B4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D062A201C9A04B200621B4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D062A221C9A04B200621B4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WoAQuiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuiz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3D062A231C9A04B200621B4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WoAQuiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuiz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3D062A251C9A04B200621B4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WoAQuizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoAQuiz.app/WoAQuiz";
+			};
+			name = Debug;
+		};
+		3D062A261C9A04B200621B4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WoAQuizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuizTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoAQuiz.app/WoAQuiz";
+			};
+			name = Release;
+		};
+		3D062A281C9A04B200621B4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WoAQuizUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuizUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WoAQuiz;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		3D062A291C9A04B200621B4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WoAQuizUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuizUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WoAQuiz;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D0629EF1C9A04B200621B4E /* Build configuration list for PBXProject "WoAQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D062A1F1C9A04B200621B4E /* Debug */,
+				3D062A201C9A04B200621B4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D062A211C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D062A221C9A04B200621B4E /* Debug */,
+				3D062A231C9A04B200621B4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3D062A241C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D062A251C9A04B200621B4E /* Debug */,
+				3D062A261C9A04B200621B4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3D062A271C9A04B200621B4E /* Build configuration list for PBXNativeTarget "WoAQuizUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D062A281C9A04B200621B4E /* Debug */,
+				3D062A291C9A04B200621B4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D0629EC1C9A04B200621B4E /* Project object */;
+}
