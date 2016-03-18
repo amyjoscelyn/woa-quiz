@@ -1,6 +1,6 @@
 storyID,comment,choices,questions,prerequisites,actionObject,actionProperty,operator,stringValue
 Font of Letter,fancy font,,,,story,fontChange,BOOL,YES
-Normal Font,normal font,,,,,fontChange,BOOL,NO
+Normal Font,normal font,,,,story,fontChange,BOOL,NO
 Creativity,creativity chosen,,,,story,creativityChosen,BOOL,YES
 Intelligence,intelligence chosen,,,,story,intelligenceChosen,BOOL,YES
 Obedience,obedience chosen,,,,story,obedienceChosen,BOOL,YES
@@ -73,3 +73,4 @@ Potions - 2,major-2,,,,character,potions,integer,-2
 Healing - 2,major-2,,,,character,healing,integer,-2
 Divining - 2,major-2,,,,character,divining,integer,-2
 Animalia - 2,major-2,,,,character,animalia,integer,-2
+Set Next Question,determines next question based on results of quiz,,,"Accepted?, Diviner?, Skilled?",story,nextQuestion,string,
