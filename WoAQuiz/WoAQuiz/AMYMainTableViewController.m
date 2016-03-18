@@ -172,6 +172,14 @@
             NSInteger choiceOutsCount = self.currentQuestion.choiceOuts.count;
             if (choiceOutsCount > 0)
             {
+                /*
+                 okay.  So here we have the place in our code where we are reserving the amount of Choice rows for our questions.
+                 I think here is where I need to go through ZhuLi and delete the offending (does not pass prerequisites) choices.  This way no space will be saved for them.
+                 Of course, if I do this, there's no way I can bring them back upon restarting the game without reading the csv in its entirety again.
+                 UNLESS I were to place ALL choices for ALL questions into a temporary, reusable mutable array that is cleared and repopulated upon every new question and doesn't touch the actual CSV-entity info
+                 If this were the case, I could have this saved as a special property... but where?
+                 Would it be in the TableViewController?  How about as an attribute to Playthrough?  Except arrays cannot be attributes.  Must this become another entity, so that its relationship is as an NSSet to the Playthrough?  A relationship with Playthrough or Question?  I feel like it should be less concrete than that though.  They'd still need to be persisted in the DataStore in case someone closes the app between those pertinent questions... or is that not necessary?  Does the currentQuestion just display itself over again, meaning any mutableArray affected by currentQuestion would still be filled out upon runtime, and not compilation?
+                 */
                 return choiceOutsCount;
             }
             else
@@ -186,6 +194,7 @@
     }
 }
 
+//this is a messy, messy method
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoryCell" forIndexPath:indexPath];
@@ -221,24 +230,35 @@
     {
         if (self.sortedChoices.count > 0)
         {
-            /*
-             If there is a prerequisite on a choice, it needs to checkPrerequisite to make sure it's good to be displayed
-             if the check returns true, the choice remains.  otherwise the choice is skipped over in the loop
-             */
             Choice *choice = self.sortedChoices[row];
             
-            if (choice.prerequisites.count > 0)
+            if (choice.prerequisites.count == 0)
+            {
+                cell.textLabel.text = choice.content;
+            }
+            else
             {
                 ZhuLi *zhuLi = [ZhuLi new];
+                BOOL passesCheck = NO;
                 
 //                NSLog(@"CHOICE PREREQ: %@", choice.prerequisites);
                 for (Prerequisite *prereq in choice.prerequisites)
                 {
-                    [zhuLi checkPrerequisite:prereq];
+                    //this needs to come back as YES to be displayed among the choices
+                    passesCheck = [zhuLi checkPrerequisite:prereq];
+//                    NSLog(@"passesCheck 3? %d", passesCheck);
+                    if (passesCheck)
+                    {
+                        NSLog(@"choice should be displayed");
+                        cell.textLabel.text = choice.content;
+                    }
+                    else
+                    {
+                        NSLog(@"choice should NOT be displayed");
+                        break;
+                    }
                 }
             }
-            
-            cell.textLabel.text = choice.content;
         }
         else if (self.currentQuestion.questionAfter)
         {//maybe this should be in section 3, and hide section 2?
@@ -339,6 +359,14 @@
         self.dataStore.playerCharacter.healing = 0;
         self.dataStore.playerCharacter.divining = 0;
         self.dataStore.playerCharacter.animalia = 0;
+        
+        self.dataStore.playthrough.creativityChosen = NO;
+        self.dataStore.playthrough.intelligenceChosen = NO;
+        self.dataStore.playthrough.obedienceChosen = NO;
+        self.dataStore.playthrough.empathyChosen = NO;
+        self.dataStore.playthrough.instinctChosen = NO;
+        self.dataStore.playthrough.perseveranceChosen = NO;
+        self.dataStore.playthrough.kindnessChosen = NO;
         
         self.textHue = 0;
         self.saturation = 0.8;

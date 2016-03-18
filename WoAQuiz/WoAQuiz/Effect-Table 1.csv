@@ -1,20 +1,20 @@
 storyID,comment,choices,questions,prerequisites,actionObject,actionProperty,operator,stringValue
 Font of Letter,fancy font,,,,story,fontChange,BOOL,YES
 Normal Font,normal font,,,,story,fontChange,BOOL,NO
-Creativity,creativity chosen,,,,story,creativityChosen,BOOL,YES
-Intelligence,intelligence chosen,,,,story,intelligenceChosen,BOOL,YES
-Obedience,obedience chosen,,,,story,obedienceChosen,BOOL,YES
-Empathy,empathy chosen,,,,story,empathyChosen,BOOL,YES
-Instinct,instinct chosen,,,,story,instinctChosen,BOOL,YES
-Perseverance,perseverance chosen,,,,story,perseveranceChosen,BOOL,YES
-Kindness,kindness chosen,,,,story,kindnessChosen,BOOL,YES
-Strength,strength chosen,,,,story,strengthChosen,BOOL,YES
-Grace,grace chosen,,,,story,graceChosen,BOOL,YES
-Intellect,intellect chosen,,,,story,intellectChosen,BOOL,YES
-Imagination,imagination chosen,,,,story,imaginationChosen,BOOL,YES
-Caring,caring chosen,,,,story,caringChosen,BOOL,YES
-Wonderment,wonderment chosen,,,,story,wondermentChosen,BOOL,YES
-Curiosity,curiosity chosen,,,,story,curiosityChosen,BOOL,YES
+Creativity,creativity chosen,,,,story,creativityChosen,BOOL,NO
+Intelligence,intelligence chosen,,,,story,intelligenceChosen,BOOL,NO
+Obedience,obedience chosen,,,,story,obedienceChosen,BOOL,NO
+Empathy,empathy chosen,,,,story,empathyChosen,BOOL,NO
+Instinct,instinct chosen,,,,story,instinctChosen,BOOL,NO
+Perseverance,perseverance chosen,,,,story,perseveranceChosen,BOOL,NO
+Kindness,kindness chosen,,,,story,kindnessChosen,BOOL,NO
+Strength,strength chosen,,,,story,strengthChosen,BOOL,NO
+Grace,grace chosen,,,,story,graceChosen,BOOL,NO
+Intellect,intellect chosen,,,,story,intellectChosen,BOOL,NO
+Imagination,imagination chosen,,,,story,imaginationChosen,BOOL,NO
+Caring,caring chosen,,,,story,caringChosen,BOOL,NO
+Wonderment,wonderment chosen,,,,story,wondermentChosen,BOOL,NO
+Curiosity,curiosity chosen,,,,story,curiosityChosen,BOOL,NO
 Q1 Answered,answer for Q1,,,,story,answerQ1,string,
 Q2 Answered,answer for Q2,,,,story,answerQ2,string,
 Q3 Answered,answer for Q3,,,,story,answerQ3,string,

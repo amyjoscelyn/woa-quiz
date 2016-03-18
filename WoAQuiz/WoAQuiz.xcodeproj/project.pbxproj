@@ -31,10 +31,10 @@
 		3D062A9D1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A8F1C9A0A5900621B4E /* Prerequisite+CoreDataProperties.m */; };
 		3D062A9E1C9A0A5900621B4E /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A911C9A0A5900621B4E /* Question.m */; };
 		3D062A9F1C9A0A5900621B4E /* Question+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D062A931C9A0A5900621B4E /* Question+CoreDataProperties.m */; };
-		3D4F455E1C9C91CC00BAFC4B /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F455A1C9C91CC00BAFC4B /* Choice-Table 1.csv */; };
-		3D4F455F1C9C91CC00BAFC4B /* Effect-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F455B1C9C91CC00BAFC4B /* Effect-Table 1.csv */; };
-		3D4F45601C9C91CC00BAFC4B /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F455C1C9C91CC00BAFC4B /* Prerequisite-Table 1.csv */; };
-		3D4F45611C9C91CC00BAFC4B /* Question-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F455D1C9C91CC00BAFC4B /* Question-Table 1.csv */; };
+		3D4F45661C9CAD5F00BAFC4B /* Choice-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F45621C9CAD5F00BAFC4B /* Choice-Table 1.csv */; };
+		3D4F45671C9CAD5F00BAFC4B /* Effect-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F45631C9CAD5F00BAFC4B /* Effect-Table 1.csv */; };
+		3D4F45681C9CAD5F00BAFC4B /* Prerequisite-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F45641C9CAD5F00BAFC4B /* Prerequisite-Table 1.csv */; };
+		3D4F45691C9CAD5F00BAFC4B /* Question-Table 1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3D4F45651C9CAD5F00BAFC4B /* Question-Table 1.csv */; };
 		BA4A8ABD5AB56FDBC613BDE8 /* libPods-WoAQuiz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B010E7E94D7CDEB67BDB6C5 /* libPods-WoAQuiz.a */; };
 /* End PBXBuildFile section */
 
@@ -102,10 +102,10 @@
 		3D062A911C9A0A5900621B4E /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		3D062A921C9A0A5900621B4E /* Question+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Question+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3D062A931C9A0A5900621B4E /* Question+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Question+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3D4F455A1C9C91CC00BAFC4B /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
-		3D4F455B1C9C91CC00BAFC4B /* Effect-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effect-Table 1.csv"; sourceTree = "<group>"; };
-		3D4F455C1C9C91CC00BAFC4B /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
-		3D4F455D1C9C91CC00BAFC4B /* Question-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Question-Table 1.csv"; sourceTree = "<group>"; };
+		3D4F45621C9CAD5F00BAFC4B /* Choice-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Choice-Table 1.csv"; sourceTree = "<group>"; };
+		3D4F45631C9CAD5F00BAFC4B /* Effect-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Effect-Table 1.csv"; sourceTree = "<group>"; };
+		3D4F45641C9CAD5F00BAFC4B /* Prerequisite-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Prerequisite-Table 1.csv"; sourceTree = "<group>"; };
+		3D4F45651C9CAD5F00BAFC4B /* Question-Table 1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Question-Table 1.csv"; sourceTree = "<group>"; };
 		4388F4E546F95B3FF33D057D /* Pods-WoAQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoAQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoAQuiz/Pods-WoAQuiz.release.xcconfig"; sourceTree = "<group>"; };
 		6B010E7E94D7CDEB67BDB6C5 /* libPods-WoAQuiz.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WoAQuiz.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07D76549A13A0865D74BA0C /* Pods-WoAQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoAQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoAQuiz/Pods-WoAQuiz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -243,10 +243,10 @@
 		3D062AB11C9A0B2700621B4E /* CSVs */ = {
 			isa = PBXGroup;
 			children = (
-				3D4F455A1C9C91CC00BAFC4B /* Choice-Table 1.csv */,
-				3D4F455B1C9C91CC00BAFC4B /* Effect-Table 1.csv */,
-				3D4F455C1C9C91CC00BAFC4B /* Prerequisite-Table 1.csv */,
-				3D4F455D1C9C91CC00BAFC4B /* Question-Table 1.csv */,
+				3D4F45621C9CAD5F00BAFC4B /* Choice-Table 1.csv */,
+				3D4F45631C9CAD5F00BAFC4B /* Effect-Table 1.csv */,
+				3D4F45641C9CAD5F00BAFC4B /* Prerequisite-Table 1.csv */,
+				3D4F45651C9CAD5F00BAFC4B /* Question-Table 1.csv */,
 			);
 			name = CSVs;
 			sourceTree = "<group>";
@@ -374,11 +374,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D4F455E1C9C91CC00BAFC4B /* Choice-Table 1.csv in Resources */,
-				3D4F455F1C9C91CC00BAFC4B /* Effect-Table 1.csv in Resources */,
+				3D4F45661C9CAD5F00BAFC4B /* Choice-Table 1.csv in Resources */,
+				3D4F45671C9CAD5F00BAFC4B /* Effect-Table 1.csv in Resources */,
 				3D062A421C9A07D700621B4E /* Main.storyboard in Resources */,
-				3D4F45601C9C91CC00BAFC4B /* Prerequisite-Table 1.csv in Resources */,
-				3D4F45611C9C91CC00BAFC4B /* Question-Table 1.csv in Resources */,
+				3D4F45681C9CAD5F00BAFC4B /* Prerequisite-Table 1.csv in Resources */,
+				3D4F45691C9CAD5F00BAFC4B /* Question-Table 1.csv in Resources */,
 				3D062A521C9A08E600621B4E /* Images.xcassets in Resources */,
 				3D062A571C9A092A00621B4E /* LaunchScreen.xib in Resources */,
 				3D062A071C9A04B200621B4E /* LaunchScreen.storyboard in Resources */,

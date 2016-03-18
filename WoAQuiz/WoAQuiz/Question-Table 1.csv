@@ -49,4 +49,4 @@ q190,,,,"q181, q182, q183",q191,,,"It’s signed once again by Headmistress McMi
 q191,,,,q190,END,,,"“Congratulations, sweetness.”  Tender smiles all around.  “We’re very proud of you.”"
 q200,,,,"q184, q185",q201,,,"It’s signed once again by Headmistress McMillan.  The wording is stiff and formulaic, and although it’s handwritten you wonder if they even bothered to write this specially for you, or if there’s just one generic letter they copy for everyone who didn’t get in.  You flip the letter over and pick up the envelope to look inside, but there’s nothing else.  You put the letter back in the envelope and drop it back on the floor.  You hear the door open and your parents come in.  “Honey?  What’s wrong?”"
 q201,,,,q200,END,,,"Hugs and the promise of your favorite for dinner help to assuage some of the disappointment and upset you feel over your rejection.  The promise of a letter from the Belvig Institute doesn’t hurt either.  After all, at that school they have boys."
-END,the end,,,"q191, q201",—,,,The end.
+END,the end,,,"q191, q201",—,,,THE END.
