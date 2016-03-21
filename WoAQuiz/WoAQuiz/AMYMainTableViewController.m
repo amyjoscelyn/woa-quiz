@@ -15,6 +15,7 @@
 @property (nonatomic, strong) AMYStoryDataStore *dataStore;
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) NSArray *sortedChoices;
+@property (strong, nonatomic) NSMutableArray *choicesArray;
 
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @property (nonatomic, strong) NSMutableArray *colorsArray;
@@ -51,25 +52,7 @@
     [self.colorsArray addObject:(id)self.topColor.CGColor];
     
     [self changeBackgroundColor];
-    
-//    NSUInteger deeperBlue = 220;
-//    self.colorInteger = deeperBlue;
-//    [self changeBackgroundColor:deeperBlue];
-    
-    //self.sortedChoices = [self.dataStore.currentQuestion.choiceOuts sortedArrayUsingDescriptors:@[self.dataStore.sortByStoryIDAsc]];
 }
-
-//- (void)changeBackgroundColor:(NSUInteger)color
-//{
-//    if (color > 359.0)
-//    {
-//        color -= 359.0;
-//    }
-//    self.textHue = color/359.0;
-//    
-//    self.tableView.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.88 alpha:1.0];
-//    self.view.backgroundColor = [UIColor colorWithHue:self.textHue saturation:0.1 brightness:0.9 alpha:1.0];
-//}
 
 - (void)changeBackgroundColor
 {
@@ -152,6 +135,45 @@
     _dataStore.playthrough.currentQuestion = currentQuestion;
     
     [_dataStore saveContext];
+    
+    [self generateChoicesArrayForCurrentQuestion:currentQuestion];
+}
+
+- (void)generateChoicesArrayForCurrentQuestion:(Question *)currentQuestion
+{
+    self.choicesArray = [[NSMutableArray alloc] init];
+    
+    if (self.sortedChoices.count > 0)
+    {
+        for (Choice *choice in currentQuestion.choiceOuts)
+        {
+            if (choice.prerequisites.count == 0)
+            {
+                [self.choicesArray addObject:choice];
+            }
+            else
+            {
+                ZhuLi *zhuLi = [ZhuLi new];
+                BOOL passesCheck = NO;
+                
+                for (Prerequisite *prereq in choice.prerequisites)
+                {
+                    //this needs to come back as YES to be displayed among the choices
+                    passesCheck = [zhuLi checkPrerequisite:prereq];
+                    //                    NSLog(@"passesCheck 3? %d", passesCheck);
+                    if (passesCheck)
+                    {
+                        NSLog(@"%@ should be displayed", choice.content);
+                        [self.choicesArray addObject:choice];
+                    }
+                    else //I don't really need this but I'll keep it here for now to make sure it works
+                    {
+                        NSLog(@"%@ should NOT be displayed", choice.content);
+                    }
+                }
+            }
+        }
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -169,17 +191,9 @@
         }
         case 1:
         {
-            NSInteger choiceOutsCount = self.currentQuestion.choiceOuts.count;
+            NSInteger choiceOutsCount = self.choicesArray.count;
             if (choiceOutsCount > 0)
             {
-                /*
-                 okay.  So here we have the place in our code where we are reserving the amount of Choice rows for our questions.
-                 I think here is where I need to go through ZhuLi and delete the offending (does not pass prerequisites) choices.  This way no space will be saved for them.
-                 Of course, if I do this, there's no way I can bring them back upon restarting the game without reading the csv in its entirety again.
-                 UNLESS I were to place ALL choices for ALL questions into a temporary, reusable mutable array that is cleared and repopulated upon every new question and doesn't touch the actual CSV-entity info
-                 If this were the case, I could have this saved as a special property... but where?
-                 Would it be in the TableViewController?  How about as an attribute to Playthrough?  Except arrays cannot be attributes.  Must this become another entity, so that its relationship is as an NSSet to the Playthrough?  A relationship with Playthrough or Question?  I feel like it should be less concrete than that though.  They'd still need to be persisted in the DataStore in case someone closes the app between those pertinent questions... or is that not necessary?  Does the currentQuestion just display itself over again, meaning any mutableArray affected by currentQuestion would still be filled out upon runtime, and not compilation?
-                 */
                 return choiceOutsCount;
             }
             else
@@ -202,7 +216,7 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     
-//    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
+    //    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
     
     if (self.dataStore.playthrough.fontChange)
     {
@@ -217,7 +231,6 @@
     {
         cell.textLabel.text = self.currentQuestion.content;
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
-//        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0]; //make backgroundColor clear!!!
         cell.textLabel.numberOfLines = 0;
         
         cell.detailTextLabel.hidden = YES;
@@ -228,37 +241,10 @@
     }
     else if (section == 1)
     {
-        if (self.sortedChoices.count > 0)
+        if (self.choicesArray.count > 0)
         {
-            Choice *choice = self.sortedChoices[row];
-            
-            if (choice.prerequisites.count == 0)
-            {
-                cell.textLabel.text = choice.content;
-            }
-            else
-            {
-                ZhuLi *zhuLi = [ZhuLi new];
-                BOOL passesCheck = NO;
-                
-//                NSLog(@"CHOICE PREREQ: %@", choice.prerequisites);
-                for (Prerequisite *prereq in choice.prerequisites)
-                {
-                    //this needs to come back as YES to be displayed among the choices
-                    passesCheck = [zhuLi checkPrerequisite:prereq];
-//                    NSLog(@"passesCheck 3? %d", passesCheck);
-                    if (passesCheck)
-                    {
-                        NSLog(@"choice should be displayed");
-                        cell.textLabel.text = choice.content;
-                    }
-                    else
-                    {
-                        NSLog(@"choice should NOT be displayed");
-                        break;
-                    }
-                }
-            }
+            Choice *choice = self.choicesArray[row];
+            cell.textLabel.text = choice.content;
         }
         else if (self.currentQuestion.questionAfter)
         {//maybe this should be in section 3, and hide section 2?
@@ -273,7 +259,6 @@
             cell.textLabel.text = @"You have reached a precarious end with no further content! (Hang here for a bit or tap to restart)";
         }
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.5 alpha:1.0];
-//        cell.textLabel.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0]; //MAKE CLEAR
         cell.textLabel.numberOfLines = 0;
         cell.detailTextLabel.hidden = YES;
     }
@@ -312,9 +297,9 @@
     {
         [self setCurrentQuestionOfStory:self.currentQuestion.questionAfter];
     }
-    else if (self.dataStore.playthrough.currentQuestion.choiceOuts.count > 0)
+    else if (self.choicesArray.count > 0)
     {
-        Choice *selectedChoice = self.sortedChoices[row];
+        Choice *selectedChoice = self.choicesArray[row];
         
         if (selectedChoice.effects.count)
         {
@@ -322,7 +307,7 @@
             {
                 if ([thing.stringValue isEqualToString:@""])
                 {
-                    Choice *selectedChoice = self.sortedChoices[row];
+                    Choice *selectedChoice = self.choicesArray[row];
                     thing.stringValue = selectedChoice.content;
                 }
                 [zhuLi doThe:thing];
@@ -375,8 +360,8 @@
         
         // go to next chapter or restart
     }
-//    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
-//    [self changeBackgroundColor:self.colorInteger];
+    //    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
+    //    [self changeBackgroundColor:self.colorInteger];
     
     [self changeBackgroundColor];
     
