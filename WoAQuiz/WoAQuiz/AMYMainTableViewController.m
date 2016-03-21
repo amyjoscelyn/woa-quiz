@@ -379,4 +379,28 @@
  PlayerCharacter: this should have attributes for the character that differs player to player, game to game: Name, PhysicalCharacteristics, Traits, Skills, and Inventory.  Some of those might be better suited as their own Entities than as mere attributes, but I can decide that when I get there.
  */
 
+
+/*
+ Now I'm on to the tricky bit.
+ 
+ I have QUESTIONS with prerequisites.  BUT INSTEAD OF THAT I should have CHOICES with prerequisites.  Because that's the code I've just handled to write, see?
+ If I have a number of choices (6, in this case) that lead out to a different question, I won't have to worry about which Question will be displayed.
+ So I have Three Prerequisites: Accepted?, Diviner?, and Skilled?
+ I have 6 different options for Questions, 3 for Accepted?=YES, and 3 for Accepted?=NO.
+ A tree is already starting to form!
+ 2 of each of those 3 require Diviner?=YES
+ 1 of those subsequent 2 require Skilled?=YES, while the other 1 requires Skilled?=NO.
+ 
+ Okay.  I have my tree all laid out on paper.  It looks like it should work!  Since only one can be chosen, whichever one of those the logic lands on will be added to the choicesArray.  Yay!
+ 
+ So what I need to do now is make sure I have properties for those prerequisites to check
+ Accepted is easy: if their chosen major is >= 10, they are accepted
+ Then I need an array for top two majors.  This is also easy.  It's just taking the first and second indexes of the sorted array
+ To check for the top two majors, I refer to this new array.
+ If Divining is one of them, Divining?=YES
+ Then I need to know whether they're skilled at Divining or not.  So diviningSkill = the integerValue.  Easy peasy!
+ 
+ Because these are prereqs, they need to be attributes of Playthrough.  Or maybe Character, because I haven't done anything with that one here yet.  Yeah.  Let's go with Character.
+ */
+
 @end
