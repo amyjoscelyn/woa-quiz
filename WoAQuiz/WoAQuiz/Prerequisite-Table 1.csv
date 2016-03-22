@@ -13,12 +13,6 @@ Imagination,imagination has been chosen,,,,story,imaginationChosen,BOOL,YES
 Caring,caring has been chosen,,,,story,caringChosen,BOOL,YES
 Wonderment,wonderment has been chosen,,,,story,wondermentChosen,BOOL,YES
 Curiosity,curiosity has been chosen,,,,story,curiosityChosen,BOOL,YES
-Rejected,not accepted,,,,story,accepted,BOOL,NO
-Accepted,accepted,,,,story,accepted,BOOL,YES
-Not a Diviner,divining is not highest/second highest major,,,,story,highestMajors,! includes,Divining
-Diviner,divining is highest/second highest major,,,,story,highestMajors,includes,Divining
-Skilled,great diviner,,,,story,skilledDiviner,BOOL,YES
-Unskilled,poor diviner,,,,story,skilledDiviner,BOOL,NO
-Accepted?,were they accepted or rejected?,,,,,,,
-Diviner?,is divining among their top two majors?,,,,,,,
-Skilled?,are they skilled at divining or not?,,,,,,,
+Accepted?,is their choice of major > 10?,,,,character,chosenMajorValue,BOOL,YES
+Diviner?,is divining among their top two majors?,,,,character,chosenMajors,BOOL,YES
+Skilled?,is divining > 8?,,,,character,diviningSkill,BOOL,YES

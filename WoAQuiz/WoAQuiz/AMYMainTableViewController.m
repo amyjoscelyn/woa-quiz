@@ -92,6 +92,7 @@
     NSString *firstMajor = highestValueMajor[@"major"];
     NSInteger firstMajorValue = (NSInteger)highestValueMajor[@"value"];
     //primary and secondary majors?
+    // can these be moved into their own method???? they have nothing to do with changing the background color
     NSString *secondMajor = @"";
     NSInteger secondMajorValue = 0;
     
@@ -211,37 +212,101 @@
 {
     self.choicesArray = [[NSMutableArray alloc] init];
     
+    //if question.storyID = @"q156" then it is the question with the specific prereq tree and it cannot go through this flow.  unless
+    //unless i were to make a single prerequisite that's just called "prereq tree 1" or something
+    //it can push the choices through into an array of choices to go through the prereq tree
+    //then that array goes through the choices... or rather
+    //ugh. this is difficult.  bc i need to return a single choice
+    //better now, i think, to just go through a separate method and not through the logic below
+    //i can refactor later
+    
     if (self.sortedChoices.count > 0)
     {
-        for (Choice *choice in currentQuestion.choiceOuts)
+        if ([currentQuestion.storyID isEqualToString:@"q156"])
         {
-            if (choice.prerequisites.count == 0)
+            NSString *choiceStoryID = @"";
+            if (self.dataStore.playerCharacter.accepted)
             {
-                [self.choicesArray addObject:choice];
+                if (self.dataStore.playerCharacter.diviner)
+                {
+                    if (self.dataStore.playerCharacter.skilledDiviner)
+                    {
+                        //SDA
+                        choiceStoryID = @"c156.3";
+                    }
+                    else
+                    {
+                        //USDA
+                        choiceStoryID = @"c156.5";
+                    }
+                }
+                else
+                {
+                    //A
+                    choiceStoryID = @"c156.1";
+                }
             }
             else
             {
-                ZhuLi *zhuLi = [ZhuLi new];
-                BOOL passesCheck = NO;
-                
-                for (Prerequisite *prereq in choice.prerequisites)
+                if (self.dataStore.playerCharacter.diviner)
                 {
-                    //this needs to come back as YES to be displayed among the choices
-                    passesCheck = [zhuLi checkPrerequisite:prereq];
-                    //                    NSLog(@"passesCheck 3? %d", passesCheck);
-                    if (passesCheck)
+                    if (self.dataStore.playerCharacter.skilledDiviner)
                     {
-                        NSLog(@"%@ should be displayed", choice.content);
-                        [self.choicesArray addObject:choice];
+                        //SDR
+                        choiceStoryID = @"c156.2";
                     }
-                    else //I don't really need this but I'll keep it here for now to make sure it works
+                    else
                     {
-                        NSLog(@"%@ should NOT be displayed", choice.content);
+                        //USDR
+                        choiceStoryID = @"c156.4";
+                    }
+                }
+                else
+                {
+                    //R
+                    choiceStoryID = @"c156.0";
+                }
+            }
+            for (Choice *choice in currentQuestion.choiceOuts)
+            {
+                if ([choice.storyID isEqualToString:choiceStoryID])
+                {
+                    [self.choicesArray addObject:choice];
+                }
+            }
+        }
+        else
+        {
+            for (Choice *choice in currentQuestion.choiceOuts)
+            {
+                if (choice.prerequisites.count == 0)
+                {
+                    [self.choicesArray addObject:choice];
+                }
+                else
+                {
+                    ZhuLi *zhuLi = [ZhuLi new];
+                    BOOL passesCheck = NO;
+                    
+                    for (Prerequisite *prereq in choice.prerequisites)
+                    {
+                        //this needs to come back as YES to be displayed among the choices
+                        passesCheck = [zhuLi checkPrerequisite:prereq];
+                        //                    NSLog(@"passesCheck 3? %d", passesCheck);
+                        if (passesCheck)
+                        {
+                            NSLog(@"%@ should be displayed", choice.content);
+                            [self.choicesArray addObject:choice];
+                        }
+                        else //I don't really need this but I'll keep it here for now to make sure it works
+                        {
+                            NSLog(@"%@ should NOT be displayed", choice.content);
+                        }
                     }
                 }
             }
         }
-    }
+    } //this is so ugly
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -99,4 +99,9 @@ c140.3,,q140,,"Q13 Answered, Healing + 1",q150,Getting away from home (Healing)
 c140.4,,q140,,"Q13 Answered, Potions + 1",q150,Food! (Potions)
 c140.5,,q140,,"Q13 Answered, Practical + 1",q150,Flying (Practical)
 c140.6,,q140,,"Q13 Answered, Divining + 1",q150,All the possibilities (Divining)
-c156.0,,q156,,"This effect, or number of effects, would take a look at different factors: whether the person has been accepted or rejected, if Diviner is in that top two array of majors, and if so, if Divining is > 10 or not.  The end of the effect would be to set the next question based on the accumulation of results",,Open the letter.
+c156.0,,q156,Rejected,,q160,Open the letter.
+c156.1,,q156,Accepted,,q161,Open the letter.
+c156.2,,q156,"Rejected, Diviner, Skilled",,q162,Open the letter.
+c156.3,,q156,"Accepted, Diviner, Skilled",,q163,Open the letter.
+c156.4,,q156,"Rejected, Diviner, Unskilled",,q164,Open the letter.
+c156.5,,q156,"Accepted, Diviner, Unskilled",,q165,Open the letter.
