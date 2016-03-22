@@ -85,36 +85,65 @@
     NSSortDescriptor *sortByHighestValue = [NSSortDescriptor sortDescriptorWithKey:@"value" ascending:NO];
     NSArray *sortedArrayOfMajors = [arrayOfMajors sortedArrayUsingDescriptors:@[sortByHighestValue]];
     
+        // can these below be moved into their own method???? they have nothing to do with changing the background color
+    
+    //these are the NSDict top three majors
     NSDictionary *highestValueMajor = sortedArrayOfMajors.firstObject;
     NSDictionary *secondHighestValueMajor = sortedArrayOfMajors[1];
     NSDictionary *thirdHighestValueMajor = sortedArrayOfMajors[2];
     
-    NSString *firstMajor = highestValueMajor[@"major"];
-    NSInteger firstMajorValue = (NSInteger)highestValueMajor[@"value"];
-    //primary and secondary majors?
-    // can these be moved into their own method???? they have nothing to do with changing the background color
-    NSString *secondMajor = @"";
-    NSInteger secondMajorValue = 0;
+    //this is the first major broken out into String and Int
+    NSString *primaryMajor = highestValueMajor[@"major"];
+    NSNumber *primaryMajorValue = highestValueMajor[@"value"];
+    NSInteger primaryMajorInteger = primaryMajorValue.integerValue;
+
+    //this determines whether the user is accepted
+    if (primaryMajorInteger >= 10)
+    {
+        self.dataStore.playerCharacter.accepted = YES;
+    }
+    else
+    {
+        self.dataStore.playerCharacter.accepted = NO;
+    }
     
-    if ((NSInteger)secondHighestValueMajor[@"value"] == (NSInteger)thirdHighestValueMajor[@"value"])
+    //this is breaking out the value of the second major
+    NSNumber *secondMajorValue = secondHighestValueMajor[@"value"];
+    NSInteger secondMajorInteger = secondMajorValue.integerValue;
+    
+    //this is breaking out the value of the third major
+    NSNumber *thirdMajorValue = thirdHighestValueMajor[@"value"];
+    NSInteger thirdMajorInteger = thirdMajorValue.integerValue;
+    
+    //this is alloc initing a second major
+    NSString *secondaryMajor = @"";
+    NSNumber *secondaryMajorValue = @0;
+    NSInteger secondaryMajorInteger = 0;
+    
+    //this is testing between the second and third major's value
+    if (secondMajorInteger == thirdMajorInteger)
     {
         //there is a tie.
         if ([thirdHighestValueMajor[@"major"] isEqualToString:@"divining"])
         {
-            secondMajor = thirdHighestValueMajor[@"major"];
-            secondMajorValue = (NSInteger)thirdHighestValueMajor[@"value"];
+            secondaryMajor = thirdHighestValueMajor[@"major"];
+            secondaryMajorValue = thirdHighestValueMajor[@"value"];
+            secondaryMajorInteger = secondaryMajorValue.integerValue;
         }
         else
         {
-            secondMajor = secondHighestValueMajor[@"major"];
-            secondMajorValue = (NSInteger)secondHighestValueMajor[@"value"];
+            secondaryMajor = secondHighestValueMajor[@"major"];
+            secondaryMajorValue = secondHighestValueMajor[@"value"];
+            secondaryMajorInteger = secondaryMajorValue.integerValue;
         }
     }
     
-    if ([firstMajor isEqualToString:@"divining"])
+    //this is determining whether the user is a diviner, and skilled at that
+    //but only if it's the primaryMajor
+    if ([primaryMajor isEqualToString:@"divining"])
     {
         self.dataStore.playerCharacter.diviner = YES;
-        if (firstMajorValue > 8) //is this low enough???
+        if (primaryMajorInteger > 8) //is this low enough???
         {
             self.dataStore.playerCharacter.skilledDiviner = YES;
         }
@@ -123,10 +152,10 @@
             self.dataStore.playerCharacter.skilledDiviner = NO;
         }
     }
-    else if ([secondMajor isEqualToString:@"divining"])
+    else if ([secondaryMajor isEqualToString:@"divining"])
     {
         self.dataStore.playerCharacter.diviner = YES;
-        if (secondMajorValue > 8) //is this low enough???
+        if (secondaryMajorInteger > 8) //is this low enough???
         {
             self.dataStore.playerCharacter.skilledDiviner = YES;
         }
@@ -140,49 +169,45 @@
         self.dataStore.playerCharacter.diviner = NO;
     }
     
-    if (firstMajorValue > 10) //  >=????
-    {
-        self.dataStore.playerCharacter.accepted = YES;
-    }
-    else
-    {
-        self.dataStore.playerCharacter.accepted = NO;
-    }
-    
+    //these are NSLogging the results as we go
     NSLog(@"major: %@", highestValueMajor);
     NSLog(@"second major: %@", secondHighestValueMajor);
+    NSLog(@"accepted? %d, diviner? %d, skilled diviner? %d", self.dataStore.playerCharacter.accepted, self.dataStore.playerCharacter.diviner, self.dataStore.playerCharacter.skilledDiviner);
     
-    if ([firstMajor isEqualToString:@"charm"])
+    //all of the above should be in its own method, but still capable of accessing the three dictionary key-value pairs
+    //maybe the method can take all three in as parameters
+    
+    if ([primaryMajor isEqualToString:@"charm"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:0.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.charm;
     }
-    else if ([firstMajor isEqualToString:@"practical"])
+    else if ([primaryMajor isEqualToString:@"practical"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:96/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.practical;
     }
-    else if ([firstMajor isEqualToString:@"history"])
+    else if ([primaryMajor isEqualToString:@"history"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:96/255.0 blue:192/255.0 alpha:1.0]; //should this just be 0,0,192, like green and red?
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.history;
     }
-    else if ([firstMajor isEqualToString:@"potions"])
+    else if ([primaryMajor isEqualToString:@"potions"])
     {
         self.bottomColor = [UIColor colorWithRed:96/255.0 green:0.0 blue:192/255.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.potions;
     }
-    else if ([firstMajor isEqualToString:@"healing"])
+    else if ([primaryMajor isEqualToString:@"healing"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:192/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.healing;
     }
-    else if ([firstMajor isEqualToString:@"divining"])
+    else if ([primaryMajor isEqualToString:@"divining"])
     {
         self.bottomColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.divining;
     }
-    else if ([firstMajor isEqualToString:@"animalia"])
+    else if ([primaryMajor isEqualToString:@"animalia"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:192/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.animalia;
@@ -493,6 +518,10 @@
         self.dataStore.playthrough.caringChosen = NO;
         self.dataStore.playthrough.wondermentChosen = NO;
         self.dataStore.playthrough.curiosityChosen = NO;
+        
+        self.dataStore.playerCharacter.accepted = NO;
+        self.dataStore.playerCharacter.diviner = NO;
+        self.dataStore.playerCharacter.skilledDiviner = NO;
         
         self.textHue = 0;
         self.saturation = 0.8;
