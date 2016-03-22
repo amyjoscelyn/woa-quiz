@@ -43,7 +43,7 @@
     
     self.gradientLayer = [CAGradientLayer layer];
     self.gradientLayer.frame = self.view.frame;
-    [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
+    [self.view.layer insertSublayer:self.gradientLayer atIndex:0]; //maybe play around with this to see if i can make it not turn gray at the bottom
     
     self.colorsArray = [[NSMutableArray alloc] init];
     
@@ -88,35 +88,46 @@
     NSDictionary *highestValueMajor = sortedArrayOfMajors.firstObject;
     NSLog(@"major: %@", highestValueMajor);
     
+    NSDictionary *secondHighestValueMajor = sortedArrayOfMajors[1];
+    //should this be a property/attribute?  since i'll have to call on it later for the prereq check? or will i handle that all here???? just to see if it's divining...
+    //i need to prepare for the use case that secondhighestvaluemajor might be tied!!!!
+    
     NSString *major = highestValueMajor[@"major"];
     
     if ([major isEqualToString:@"charm"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:0.0 blue:0.0 alpha:1.0];
+        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.charm;
     }
     else if ([major isEqualToString:@"practical"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:96/255.0 blue:0.0 alpha:1.0];
+        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.practical;
     }
     else if ([major isEqualToString:@"history"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:96/255.0 blue:192/255.0 alpha:1.0]; //should this just be 0,0,192, like green and red?
+        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.history;
     }
     else if ([major isEqualToString:@"potions"])
     {
         self.bottomColor = [UIColor colorWithRed:96/255.0 green:0.0 blue:192/255.0 alpha:1.0];
+        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.potions;
     }
     else if ([major isEqualToString:@"healing"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:192/255.0 blue:0.0 alpha:1.0];
+        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.healing;
     }
     else if ([major isEqualToString:@"divining"])
     {
         self.bottomColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
+        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.divining;
     }
     else if ([major isEqualToString:@"animalia"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:192/255.0 blue:0.0 alpha:1.0];
+        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.animalia;
     }
     else
     {
@@ -401,6 +412,13 @@
  Then I need to know whether they're skilled at Divining or not.  So diviningSkill = the integerValue.  Easy peasy!
  
  Because these are prereqs, they need to be attributes of Playthrough.  Or maybe Character, because I haven't done anything with that one here yet.  Yeah.  Let's go with Character.
+ */
+
+/*
+ choices were missing for Qs 7/7A.  Why?  See what's up with this.
+ it loses choices gradually over time... i'm not resetting the properties properly at end of game
+ suggestion to make everything clear or blurry, but not the awkward gray of the background right now
+ maybe a different text color--a gray, brown, or black, perhaps
  */
 
 @end
