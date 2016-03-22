@@ -24,7 +24,6 @@
 
 @property (nonatomic) CGFloat textHue;
 @property (nonatomic) CGFloat saturation;
-//@property (nonatomic) NSUInteger colorInteger;
 
 @end
 
@@ -317,7 +316,7 @@
                     {
                         //this needs to come back as YES to be displayed among the choices
                         passesCheck = [zhuLi checkPrerequisite:prereq];
-                        //                    NSLog(@"passesCheck 3? %d", passesCheck);
+                        NSLog(@"passesCheck 3? %d", passesCheck);
                         if (passesCheck)
                         {
                             NSLog(@"%@ should be displayed", choice.content);
@@ -507,6 +506,7 @@
         self.dataStore.playerCharacter.accepted = NO;
         self.dataStore.playerCharacter.diviner = NO;
         self.dataStore.playerCharacter.skilledDiviner = NO;
+        self.dataStore.playerCharacter.stateOfAcceptance = @"";
         self.dataStore.playerCharacter.chosenMajorValue = 0;
         
         self.textHue = 0;
