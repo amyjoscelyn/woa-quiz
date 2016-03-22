@@ -168,9 +168,9 @@
     }
     
     //these are NSLogging the results as we go
-    NSLog(@"major: %@", highestValueMajor);
-    NSLog(@"second major: %@", secondHighestValueMajor);
-    NSLog(@"accepted? %d, diviner? %d, skilled diviner? %d", self.dataStore.playerCharacter.accepted, self.dataStore.playerCharacter.diviner, self.dataStore.playerCharacter.skilledDiviner);
+//    NSLog(@"major: %@", highestValueMajor);
+//    NSLog(@"second major: %@", secondHighestValueMajor);
+//    NSLog(@"accepted? %d, diviner? %d, skilled diviner? %d", self.dataStore.playerCharacter.accepted, self.dataStore.playerCharacter.diviner, self.dataStore.playerCharacter.skilledDiviner);
     
     //all of the above should be in its own method, but still capable of accessing the three dictionary key-value pairs
     //maybe the method can take all three in as parameters
@@ -310,12 +310,12 @@
                         
                         if (passesCheck)
                         {
-                            NSLog(@"%@ should be displayed", choice.content);
+//                            NSLog(@"%@ should be displayed", choice.content);
                             [self.choicesArray addObject:choice];
                         }
                         else //I don't really need this but I'll keep it here for now to make sure it works
                         {
-                            NSLog(@"%@ should NOT be displayed", choice.content);
+//                            NSLog(@"%@ should NOT be displayed", choice.content);
                         }
                     }
                 }

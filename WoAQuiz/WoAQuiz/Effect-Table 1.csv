@@ -15,22 +15,6 @@ Imagination,imagination chosen,,,,story,imaginationChosen,BOOL,NO
 Caring,caring chosen,,,,story,caringChosen,BOOL,NO
 Wonderment,wonderment chosen,,,,story,wondermentChosen,BOOL,NO
 Curiosity,curiosity chosen,,,,story,curiosityChosen,BOOL,NO
-Q1 Answered,answer for Q1,,,,story,answerQ1,string,
-Q2 Answered,answer for Q2,,,,story,answerQ2,string,
-Q3 Answered,answer for Q3,,,,story,answerQ3,string,
-Q3A Answered,answer for Q3A,,,,story,answerQ3A,string,
-Q3B Answered,answer for Q3B,,,,story,answerQ3B,string,
-Q4 Answered,answer for Q4,,,,story,answerQ4,string,
-Q5 Answered,answer for Q5,,,,story,answerQ5,string,
-Q6 Answered,answer for Q6,,,,story,answerQ6,string,
-Q7 Answered,answer for Q7,,,,story,answerQ7,string,
-Q7A Answered,answer for Q7A,,,,story,answerQ7A,string,
-Q8 Answered,answer for Q8,,,,story,answerQ8,string,
-Q9 Answered,answer for Q9,,,,story,answerQ9,string,
-Q10 Answered,answer for Q10,,,,story,answerQ10,string,
-Q11 Answered,answer for Q11,,,,story,answerQ11,string,
-Q12 Answered,answer for Q12,,,,story,answerQ12,string,
-Q13 Answered,answer for Q13,,,,story,answerQ13,string,
 Charm + 4,major+4,,,,character,charm,integer,4
 Practical + 4,major+4,,,,character,practical,integer,4
 History + 4,major+4,,,,character,history,integer,4
