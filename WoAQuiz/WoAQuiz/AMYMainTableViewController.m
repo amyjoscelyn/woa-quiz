@@ -130,12 +130,12 @@
             secondaryMajorValue = thirdHighestValueMajor[@"value"];
             secondaryMajorInteger = secondaryMajorValue.integerValue;
         }
-        else
-        {
-            secondaryMajor = secondHighestValueMajor[@"major"];
-            secondaryMajorValue = secondHighestValueMajor[@"value"];
-            secondaryMajorInteger = secondaryMajorValue.integerValue;
-        }
+    }
+    else
+    {
+        secondaryMajor = secondHighestValueMajor[@"major"];
+        secondaryMajorValue = secondHighestValueMajor[@"value"];
+        secondaryMajorInteger = secondaryMajorValue.integerValue;
     }
     
     //this is determining whether the user is a diviner, and skilled at that
@@ -143,7 +143,7 @@
     if ([primaryMajor isEqualToString:@"divining"])
     {
         self.dataStore.playerCharacter.diviner = YES;
-        if (primaryMajorInteger > 8) //is this low enough???
+        if (primaryMajorInteger > 8)
         {
             self.dataStore.playerCharacter.skilledDiviner = YES;
         }
@@ -155,7 +155,7 @@
     else if ([secondaryMajor isEqualToString:@"divining"])
     {
         self.dataStore.playerCharacter.diviner = YES;
-        if (secondaryMajorInteger > 8) //is this low enough???
+        if (secondaryMajorInteger > 8)
         {
             self.dataStore.playerCharacter.skilledDiviner = YES;
         }
