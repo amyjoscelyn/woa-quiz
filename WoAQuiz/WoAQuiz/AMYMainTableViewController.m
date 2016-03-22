@@ -86,45 +86,102 @@
     NSArray *sortedArrayOfMajors = [arrayOfMajors sortedArrayUsingDescriptors:@[sortByHighestValue]];
     
     NSDictionary *highestValueMajor = sortedArrayOfMajors.firstObject;
-    NSLog(@"major: %@", highestValueMajor);
-    
     NSDictionary *secondHighestValueMajor = sortedArrayOfMajors[1];
-    //should this be a property/attribute?  since i'll have to call on it later for the prereq check? or will i handle that all here???? just to see if it's divining...
-    //i need to prepare for the use case that secondhighestvaluemajor might be tied!!!!
+    NSDictionary *thirdHighestValueMajor = sortedArrayOfMajors[2];
     
-    NSString *major = highestValueMajor[@"major"];
+    NSString *firstMajor = highestValueMajor[@"major"];
+    NSInteger firstMajorValue = (NSInteger)highestValueMajor[@"value"];
+    //primary and secondary majors?
+    NSString *secondMajor = @"";
+    NSInteger secondMajorValue = 0;
     
-    if ([major isEqualToString:@"charm"])
+    if ((NSInteger)secondHighestValueMajor[@"value"] == (NSInteger)thirdHighestValueMajor[@"value"])
+    {
+        //there is a tie.
+        if ([thirdHighestValueMajor[@"major"] isEqualToString:@"divining"])
+        {
+            secondMajor = thirdHighestValueMajor[@"major"];
+            secondMajorValue = (NSInteger)thirdHighestValueMajor[@"value"];
+        }
+        else
+        {
+            secondMajor = secondHighestValueMajor[@"major"];
+            secondMajorValue = (NSInteger)secondHighestValueMajor[@"value"];
+        }
+    }
+    
+    if ([firstMajor isEqualToString:@"divining"])
+    {
+        self.dataStore.playerCharacter.diviner = YES;
+        if (firstMajorValue > 8) //is this low enough???
+        {
+            self.dataStore.playerCharacter.skilledDiviner = YES;
+        }
+        else
+        {
+            self.dataStore.playerCharacter.skilledDiviner = NO;
+        }
+    }
+    else if ([secondMajor isEqualToString:@"divining"])
+    {
+        self.dataStore.playerCharacter.diviner = YES;
+        if (secondMajorValue > 8) //is this low enough???
+        {
+            self.dataStore.playerCharacter.skilledDiviner = YES;
+        }
+        else
+        {
+            self.dataStore.playerCharacter.skilledDiviner = NO;
+        }
+    }
+    else
+    {
+        self.dataStore.playerCharacter.diviner = NO;
+    }
+    
+    if (firstMajorValue > 10) //  >=????
+    {
+        self.dataStore.playerCharacter.accepted = YES;
+    }
+    else
+    {
+        self.dataStore.playerCharacter.accepted = NO;
+    }
+    
+    NSLog(@"major: %@", highestValueMajor);
+    NSLog(@"second major: %@", secondHighestValueMajor);
+    
+    if ([firstMajor isEqualToString:@"charm"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:0.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.charm;
     }
-    else if ([major isEqualToString:@"practical"])
+    else if ([firstMajor isEqualToString:@"practical"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:96/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.practical;
     }
-    else if ([major isEqualToString:@"history"])
+    else if ([firstMajor isEqualToString:@"history"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:96/255.0 blue:192/255.0 alpha:1.0]; //should this just be 0,0,192, like green and red?
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.history;
     }
-    else if ([major isEqualToString:@"potions"])
+    else if ([firstMajor isEqualToString:@"potions"])
     {
         self.bottomColor = [UIColor colorWithRed:96/255.0 green:0.0 blue:192/255.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.potions;
     }
-    else if ([major isEqualToString:@"healing"])
+    else if ([firstMajor isEqualToString:@"healing"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:192/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.healing;
     }
-    else if ([major isEqualToString:@"divining"])
+    else if ([firstMajor isEqualToString:@"divining"])
     {
         self.bottomColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.divining;
     }
-    else if ([major isEqualToString:@"animalia"])
+    else if ([firstMajor isEqualToString:@"animalia"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:192/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.animalia;
@@ -423,8 +480,6 @@
  */
 
 /*
- choices were missing for Qs 7/7A.  Why?  See what's up with this.
- it loses choices gradually over time... i'm not resetting the properties properly at end of game
  suggestion to make everything clear or blurry, but not the awkward gray of the background right now
  maybe a different text color--a gray, brown, or black, perhaps
  */
