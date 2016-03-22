@@ -1,8 +1,8 @@
 //
 //  Playthrough+CoreDataProperties.m
-//  DreamGame
+//  WoAQuiz
 //
-//  Created by Amy Joscelyn on 2/24/16.
+//  Created by Amy Joscelyn on 3/22/16.
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,13 +13,6 @@
 
 @implementation Playthrough (CoreDataProperties)
 
-@dynamic answerQ1;
-@dynamic answerQ2;
-@dynamic answerQ3;
-@dynamic answerQ3A;
-@dynamic answerQ3B;
-@dynamic answerQ7;
-@dynamic answerQ7A;
 @dynamic caringChosen;
 @dynamic creativityChosen;
 @dynamic curiosityChosen;
@@ -35,13 +28,6 @@
 @dynamic perseveranceChosen;
 @dynamic strengthChosen;
 @dynamic wondermentChosen;
-@dynamic answerQ4;
-@dynamic answerQ5;
-@dynamic answerQ6;
-@dynamic answerQ8;
-@dynamic answerQ9;
-@dynamic answerQ10;
-@dynamic answerQ11;
 @dynamic currentQuestion;
 @dynamic playerCharacter;
 

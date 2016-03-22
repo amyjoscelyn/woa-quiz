@@ -480,21 +480,6 @@
         // below resets the properties
         self.dataStore.playthrough.fontChange = NO;
         
-        self.dataStore.playthrough.answerQ1 = @"";
-        self.dataStore.playthrough.answerQ2 = @"";
-        self.dataStore.playthrough.answerQ3 = @"";
-        self.dataStore.playthrough.answerQ3A = @"";
-        self.dataStore.playthrough.answerQ3B = @"";
-        self.dataStore.playthrough.answerQ4 = @"";
-        self.dataStore.playthrough.answerQ5 = @"";
-        self.dataStore.playthrough.answerQ6 = @"";
-        self.dataStore.playthrough.answerQ7 = @"";
-        self.dataStore.playthrough.answerQ7A = @"";
-        self.dataStore.playthrough.answerQ8 = @"";
-        self.dataStore.playthrough.answerQ9 = @"";
-        self.dataStore.playthrough.answerQ10 = @"";
-        self.dataStore.playthrough.answerQ11 = @"";
-        
         self.dataStore.playerCharacter.charm = 0;
         self.dataStore.playerCharacter.practical = 0;
         self.dataStore.playerCharacter.history = 0;
@@ -522,6 +507,7 @@
         self.dataStore.playerCharacter.accepted = NO;
         self.dataStore.playerCharacter.diviner = NO;
         self.dataStore.playerCharacter.skilledDiviner = NO;
+        self.dataStore.playerCharacter.chosenMajorValue = 0;
         
         self.textHue = 0;
         self.saturation = 0.8;
@@ -551,26 +537,10 @@
 
 
 /*
- Now I'm on to the tricky bit.
- 
- I have QUESTIONS with prerequisites.  BUT INSTEAD OF THAT I should have CHOICES with prerequisites.  Because that's the code I've just handled to write, see?
- If I have a number of choices (6, in this case) that lead out to a different question, I won't have to worry about which Question will be displayed.
- So I have Three Prerequisites: Accepted?, Diviner?, and Skilled?
- I have 6 different options for Questions, 3 for Accepted?=YES, and 3 for Accepted?=NO.
- A tree is already starting to form!
- 2 of each of those 3 require Diviner?=YES
- 1 of those subsequent 2 require Skilled?=YES, while the other 1 requires Skilled?=NO.
- 
- Okay.  I have my tree all laid out on paper.  It looks like it should work!  Since only one can be chosen, whichever one of those the logic lands on will be added to the choicesArray.  Yay!
- 
- So what I need to do now is make sure I have properties for those prerequisites to check
- Accepted is easy: if their chosen major is >= 10, they are accepted
- Then I need an array for top two majors.  This is also easy.  It's just taking the first and second indexes of the sorted array
- To check for the top two majors, I refer to this new array.
- If Divining is one of them, Divining?=YES
- Then I need to know whether they're skilled at Divining or not.  So diviningSkill = the integerValue.  Easy peasy!
- 
- Because these are prereqs, they need to be attributes of Playthrough.  Or maybe Character, because I haven't done anything with that one here yet.  Yeah.  Let's go with Character.
+ Cool!  I got that tricky part finished with the first part leading into the letter.  Next part will be more of the same, I think.
+ "The letter greets you by name..."
+ But honestly, I think this is the easiest part of all, because it feels like a spreadsheet change
+ Make five "The letter greets..." and just connect them together!
  */
 
 /*

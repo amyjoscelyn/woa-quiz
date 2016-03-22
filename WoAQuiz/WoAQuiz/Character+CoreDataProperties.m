@@ -2,7 +2,7 @@
 //  Character+CoreDataProperties.m
 //  WoAQuiz
 //
-//  Created by Amy Joscelyn on 3/21/16.
+//  Created by Amy Joscelyn on 3/22/16.
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -25,6 +25,7 @@
 @dynamic potions;
 @dynamic practical;
 @dynamic skilledDiviner;
+@dynamic stateOfAcceptance;
 @dynamic playthrough;
 
 @end

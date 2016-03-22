@@ -73,4 +73,4 @@ Potions - 2,major-2,,,,character,potions,integer,-2
 Healing - 2,major-2,,,,character,healing,integer,-2
 Divining - 2,major-2,,,,character,divining,integer,-2
 Animalia - 2,major-2,,,,character,animalia,integer,-2
-Set Next Question,determines next question based on results of quiz,,,"Accepted?, Diviner?, Skilled?",story,nextQuestion,string,
+State of Acceptance,sets string property as one of five options for character acceptance,,,,character,stateOfAcceptance,string,

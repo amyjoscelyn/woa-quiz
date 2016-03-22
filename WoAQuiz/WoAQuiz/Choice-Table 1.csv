@@ -105,3 +105,8 @@ c156.2,,q156,"Rejected, Diviner, Skilled",,q162,Open the letter.
 c156.3,,q156,"Accepted, Diviner, Skilled",,q163,Open the letter.
 c156.4,,q156,"Rejected, Diviner, Unskilled",,q164,Open the letter.
 c156.5,,q156,"Accepted, Diviner, Unskilled",,q165,Open the letter.
+c181.0,,q180,Exceptional Acceptance,,q181,Read on.
+c181.1,,q180,Regular Acceptance,,q182,Read on.
+c181.2,,q180,Barely Accepted,,q183,Read on.
+c181.3,,q180,Barely Rejected,,q184,Read on.
+c181.4,,q180,Regular Rejection,,q185,Read on.

@@ -16,3 +16,8 @@ Curiosity,curiosity has been chosen,,,,story,curiosityChosen,BOOL,YES
 Accepted?,is their choice of major > 10?,,,,character,chosenMajorValue,BOOL,YES
 Diviner?,is divining among their top two majors?,,,,character,chosenMajors,BOOL,YES
 Skilled?,is divining > 8?,,,,character,diviningSkill,BOOL,YES
+Exceptional Acceptance,primary major int > 15,,,,character,stateOfAcceptance,string,Exceptional Acceptance
+Regular Acceptance,primary major int > 12,,,,character,stateOfAcceptance,string,Regular Acceptance
+Barely Accepted,primary major int >= 10,,,,character,stateOfAcceptance,string,Barely Accepted
+Barely Rejected,primary major int < 10,,,,character,stateOfAcceptance,string,Barely Rejected
+Regular Rejection,primary major int < 7 or 8?,,,,character,stateOfAcceptance,string,Regular Rejection
