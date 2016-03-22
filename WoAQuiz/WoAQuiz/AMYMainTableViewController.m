@@ -364,6 +364,14 @@
         self.dataStore.playthrough.perseveranceChosen = NO;
         self.dataStore.playthrough.kindnessChosen = NO;
         
+        self.dataStore.playthrough.strengthChosen = NO;
+        self.dataStore.playthrough.graceChosen = NO;
+        self.dataStore.playthrough.intellectChosen = NO;
+        self.dataStore.playthrough.imaginationChosen = NO;
+        self.dataStore.playthrough.caringChosen = NO;
+        self.dataStore.playthrough.wondermentChosen = NO;
+        self.dataStore.playthrough.curiosityChosen = NO;
+        
         self.textHue = 0;
         self.saturation = 0.8;
         
