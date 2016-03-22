@@ -138,7 +138,6 @@
     }
     
     //this is determining whether the user is a diviner, and skilled at that
-    //but only if it's the primaryMajor
     if ([primaryMajor isEqualToString:@"divining"])
     {
         self.dataStore.playerCharacter.diviner = YES;
@@ -236,14 +235,6 @@
 {
     self.choicesArray = [[NSMutableArray alloc] init];
     
-    //if question.storyID = @"q156" then it is the question with the specific prereq tree and it cannot go through this flow.  unless
-    //unless i were to make a single prerequisite that's just called "prereq tree 1" or something
-    //it can push the choices through into an array of choices to go through the prereq tree
-    //then that array goes through the choices... or rather
-    //ugh. this is difficult.  bc i need to return a single choice
-    //better now, i think, to just go through a separate method and not through the logic below
-    //i can refactor later
-    
     if (self.sortedChoices.count > 0)
     {
         if ([currentQuestion.storyID isEqualToString:@"q156"])
@@ -255,18 +246,18 @@
                 {
                     if (self.dataStore.playerCharacter.skilledDiviner)
                     {
-                        //SDA
+                        //Skilled Diviner Accepted
                         choiceStoryID = @"c156.3";
                     }
                     else
                     {
-                        //USDA
+                        //Unskilled Diviner Accepted
                         choiceStoryID = @"c156.5";
                     }
                 }
                 else
                 {
-                    //A
+                    //Accepted
                     choiceStoryID = @"c156.1";
                 }
             }
@@ -276,18 +267,18 @@
                 {
                     if (self.dataStore.playerCharacter.skilledDiviner)
                     {
-                        //SDR
+                        //Skilled Diviner Rejected
                         choiceStoryID = @"c156.2";
                     }
                     else
                     {
-                        //USDR
+                        //Unskilled Diviner Rejected
                         choiceStoryID = @"c156.4";
                     }
                 }
                 else
                 {
-                    //R
+                    //Rejected
                     choiceStoryID = @"c156.0";
                 }
             }
@@ -314,9 +305,9 @@
                     
                     for (Prerequisite *prereq in choice.prerequisites)
                     {
-                        //this needs to come back as YES to be displayed among the choices
+                        //passesCheck must come back as YES to be displayed among the choices
                         passesCheck = [zhuLi checkPrerequisite:prereq];
-                        NSLog(@"passesCheck 3? %d", passesCheck);
+                        
                         if (passesCheck)
                         {
                             NSLog(@"%@ should be displayed", choice.content);
@@ -372,8 +363,6 @@
     
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
-    
-    //    cell.backgroundColor = [UIColor colorWithHue:self.textHue saturation:self.saturation brightness:0.85 alpha:1.0];
     
     if (self.dataStore.playthrough.fontChange)
     {
@@ -443,7 +432,8 @@
     ZhuLi *zhuLi = [ZhuLi new];
     
     if (self.currentQuestion.effects.count > 0)
-    { //this takes care of effects the currentQuestion might incur
+    {
+        //this takes care of effects the currentQuestion might incur
         for (Effect *thing in self.currentQuestion.effects)
         {
             [zhuLi doThe:thing];
@@ -506,8 +496,8 @@
         self.dataStore.playerCharacter.accepted = NO;
         self.dataStore.playerCharacter.diviner = NO;
         self.dataStore.playerCharacter.skilledDiviner = NO;
-        self.dataStore.playerCharacter.stateOfAcceptance = @"";
         self.dataStore.playerCharacter.chosenMajorValue = 0;
+        self.dataStore.playerCharacter.stateOfAcceptance = @"";
         
         self.textHue = 0;
         self.saturation = 0.8;
@@ -516,32 +506,10 @@
         
         // go to next chapter or restart
     }
-    //    self.colorInteger += 3; //5 is a little jarring, 3 is good, but probably less will be better and more subtle without needing animation
-    //    [self changeBackgroundColor:self.colorInteger];
-    
     [self changeBackgroundColor];
     
     [self.tableView reloadData];
 }
-
-/*
- I have the entities set up already for prerequisites and effects.
- Effects: write some into the content, attribute them to choices, then write code to read those effects--properties that will change when the effect is triggered
- Prerequisites: write some into the choices (if there are two choices that are superficially the same, but lead to different corresponding questions because of different prerequisites, the properties should filter through the prereqs and only display one of those similar choices to avoid confusion and apparent duplication), write code to have them read the properties.  Only display the ones that pass the check--the check is a BOOL, and if the BOOL is YES, display the choice.  If it is NO, ignore it.
- 
- I still need to set up some entities, for the story, the world, and the character.
- Playthrough: this entity should hold the state of the entire story--the current question the app is closed on, as well as the latest saved state if the story's progress is manually saved.  It should also hold relationships with the World and the PlayerCharacter as well as Question.
- World: this should have attributes for all of the appropriate world details that are dynamic and can be changed by effects from the player's choices.
- PlayerCharacter: this should have attributes for the character that differs player to player, game to game: Name, PhysicalCharacteristics, Traits, Skills, and Inventory.  Some of those might be better suited as their own Entities than as mere attributes, but I can decide that when I get there.
- */
-
-
-/*
- Cool!  I got that tricky part finished with the first part leading into the letter.  Next part will be more of the same, I think.
- "The letter greets you by name..."
- But honestly, I think this is the easiest part of all, because it feels like a spreadsheet change
- Make five "The letter greets..." and just connect them together!
- */
 
 /*
  suggestion to make everything clear or blurry, but not the awkward gray of the background right now
