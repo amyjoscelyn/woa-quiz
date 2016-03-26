@@ -338,6 +338,7 @@
 				TargetAttributes = {
 					3D0629F31C9A04B200621B4E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 356QF5S3U7;
 					};
 					3D062A0C1C9A04B200621B4E = {
 						CreatedOnToolsVersion = 7.2;
@@ -605,6 +606,7 @@
 			baseConfigurationReference = E07D76549A13A0865D74BA0C /* Pods-WoAQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WoAQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuiz;
@@ -618,6 +620,7 @@
 			baseConfigurationReference = 4388F4E546F95B3FF33D057D /* Pods-WoAQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WoAQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AMY.WoAQuiz;

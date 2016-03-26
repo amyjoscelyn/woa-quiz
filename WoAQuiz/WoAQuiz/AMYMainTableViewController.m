@@ -514,6 +514,8 @@
 /*
  suggestion to make everything clear or blurry, but not the awkward gray of the background right now
  maybe a different text color--a gray, brown, or black, perhaps
+ 
+ also, take away the tab-view controller?  i don't need it for this quiz
  */
 
 @end
