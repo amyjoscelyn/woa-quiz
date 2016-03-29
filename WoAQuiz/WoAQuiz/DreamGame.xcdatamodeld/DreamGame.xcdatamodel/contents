@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
     <entity name="Character" representedClassName="Character" syncable="YES">
         <attribute name="accepted" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="animalia" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="charm" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="chosenMajor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chosenMajorColor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="chosenMajorValue" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="diviner" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="divining" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -86,7 +88,7 @@
         <relationship name="questionBefores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="questionAfter" inverseEntity="Question" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Character" positionX="-261" positionY="-75" width="128" height="255"/>
+        <element name="Character" positionX="-261" positionY="-75" width="128" height="285"/>
         <element name="Choice" positionX="277" positionY="-25" width="128" height="148"/>
         <element name="Effect" positionX="97" positionY="162" width="128" height="238"/>
         <element name="Playthrough" positionX="-315" positionY="72" width="128" height="300"/>

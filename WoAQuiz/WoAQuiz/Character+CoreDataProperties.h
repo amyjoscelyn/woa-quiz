@@ -2,7 +2,7 @@
 //  Character+CoreDataProperties.h
 //  WoAQuiz
 //
-//  Created by Amy Joscelyn on 3/22/16.
+//  Created by Amy Joscelyn on 3/29/16.
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int64_t practical;
 @property (nonatomic) BOOL skilledDiviner;
 @property (nullable, nonatomic, retain) NSString *stateOfAcceptance;
+@property (nullable, nonatomic, retain) NSString *chosenMajor;
+@property (nullable, nonatomic, retain) NSString *chosenMajorColor;
 @property (nullable, nonatomic, retain) Playthrough *playthrough;
 
 @end

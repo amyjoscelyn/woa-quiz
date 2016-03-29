@@ -179,36 +179,43 @@
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:0.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.charm;
+        self.dataStore.playerCharacter.chosenMajorColor = @"red";
     }
     else if ([primaryMajor isEqualToString:@"practical"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:96/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.practical;
+        self.dataStore.playerCharacter.chosenMajorColor = @"orange";
     }
     else if ([primaryMajor isEqualToString:@"history"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:96/255.0 blue:192/255.0 alpha:1.0]; //should this just be 0,0,192, like green and red?
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.history;
+        self.dataStore.playerCharacter.chosenMajorColor = @"blue";
     }
     else if ([primaryMajor isEqualToString:@"potions"])
     {
         self.bottomColor = [UIColor colorWithRed:96/255.0 green:0.0 blue:192/255.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.potions;
+        self.dataStore.playerCharacter.chosenMajorColor = @"purple";
     }
     else if ([primaryMajor isEqualToString:@"healing"])
     {
         self.bottomColor = [UIColor colorWithRed:0.0 green:192/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.healing;
+        self.dataStore.playerCharacter.chosenMajorColor = @"green";
     }
     else if ([primaryMajor isEqualToString:@"divining"])
     {
         self.bottomColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.divining;
+        self.dataStore.playerCharacter.chosenMajorColor = @"silver";
     }
     else if ([primaryMajor isEqualToString:@"animalia"])
     {
         self.bottomColor = [UIColor colorWithRed:192/255.0 green:192/255.0 blue:0.0 alpha:1.0];
         self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.animalia;
+        self.dataStore.playerCharacter.chosenMajorColor = @"yellow";
     }
     else
     {
@@ -217,6 +224,8 @@
     [self.colorsArray replaceObjectAtIndex:1 withObject:(id)self.bottomColor.CGColor];
     
     self.gradientLayer.colors = self.colorsArray;
+    
+    self.dataStore.playerCharacter.chosenMajor = primaryMajor;
 }
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
@@ -375,7 +384,26 @@
     
     if (section == 0)
     {
-        cell.textLabel.text = self.currentQuestion.content;
+        NSString *content = [self.currentQuestion.content mutableCopy];
+        
+        if ([content containsString:@"#"])
+        {
+//            NSLog(@"content: %@", content);
+            //if there's a pound symbol, then I need to replace the text with the appropriate word(s)
+            if ([content containsString:@"#highestMajor"])
+            {
+                NSLog(@"highest major: %@", self.dataStore.playerCharacter.chosenMajor);
+                //I'll have to remember to capitalize the Major
+                content = [content stringByReplacingOccurrencesOfString:@"#highestMajor" withString:self.dataStore.playerCharacter.chosenMajor];
+            }
+            if ([content containsString:@"#highestMajorColor"])
+            {
+                NSLog(@"major color: %@", self.dataStore.playerCharacter.chosenMajorColor);
+                content = [content stringByReplacingOccurrencesOfString:@"#highestMajorColor" withString:self.dataStore.playerCharacter.chosenMajorColor];
+            }
+//            NSLog(@"content: %@", content);
+        }
+        cell.textLabel.text = content;
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
         cell.textLabel.numberOfLines = 0;
         
@@ -497,6 +525,8 @@
         self.dataStore.playerCharacter.diviner = NO;
         self.dataStore.playerCharacter.skilledDiviner = NO;
         self.dataStore.playerCharacter.chosenMajorValue = 0;
+        self.dataStore.playerCharacter.chosenMajor = @"";
+        self.dataStore.playerCharacter.chosenMajorColor = @"";
         self.dataStore.playerCharacter.stateOfAcceptance = @"";
         
         self.textHue = 0;
