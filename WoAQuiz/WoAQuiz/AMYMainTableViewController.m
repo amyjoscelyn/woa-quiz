@@ -390,6 +390,9 @@
         
         if ([content containsString:@"#"])
         {
+//            ZhuLi *zhuLi = [ZhuLi new];
+//            content = [zhuLi replaceContent:content];
+            //the code below doesn't work in ZhuLi yet because there's some complaint with accessing the chosenMajorColor--it's (null) according to the NSLog, which means it's not reading it from the background color method found right now in this class, which means it doesn't set properly away from the TableViewController
             if ([content containsString:@"#highestMajorColor"])
             {
                 NSLog(@"major color: %@", self.dataStore.playerCharacter.chosenMajorColor);
@@ -398,10 +401,8 @@
             if ([content containsString:@"#highestMajor"])
             {
                 NSLog(@"highest major: %@", self.dataStore.playerCharacter.chosenMajor);
-                //I'll have to remember to capitalize the Major
                 content = [content stringByReplacingOccurrencesOfString:@"#highestMajor" withString:self.dataStore.playerCharacter.chosenMajor.capitalizedString];
             }
-//            NSLog(@"content: %@", content);
         }
         cell.textLabel.text = content;
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
