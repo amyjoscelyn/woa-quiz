@@ -53,7 +53,7 @@
     [self changeBackgroundColor];
 }
 
-- (void)changeBackgroundColor
+- (void)changeBackgroundColor //this method can definitely be broken into several smaller methods
 {
     NSNumber *charm = @(self.dataStore.playerCharacter.charm);
     NSNumber *practical = @(self.dataStore.playerCharacter.practical);
@@ -63,6 +63,7 @@
     NSNumber *divining = @(self.dataStore.playerCharacter.divining);
     NSNumber *animalia = @(self.dataStore.playerCharacter.animalia);
     
+    //maybe this part can be a separate method, everything to do with this array of dictionaries
     NSArray *arrayOfMajors = @[ @{ @"major" : @"charm"      ,
                                    @"value" : charm },
                                 @{ @"major" : @"practical"  ,
@@ -226,6 +227,7 @@
     self.gradientLayer.colors = self.colorsArray;
     
     self.dataStore.playerCharacter.chosenMajor = primaryMajor;
+    NSLog(@"the major color is %@", self.dataStore.playerCharacter.chosenMajorColor);
 }
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
@@ -388,18 +390,16 @@
         
         if ([content containsString:@"#"])
         {
-//            NSLog(@"content: %@", content);
-            //if there's a pound symbol, then I need to replace the text with the appropriate word(s)
-            if ([content containsString:@"#highestMajor"])
-            {
-                NSLog(@"highest major: %@", self.dataStore.playerCharacter.chosenMajor);
-                //I'll have to remember to capitalize the Major
-                content = [content stringByReplacingOccurrencesOfString:@"#highestMajor" withString:self.dataStore.playerCharacter.chosenMajor];
-            }
             if ([content containsString:@"#highestMajorColor"])
             {
                 NSLog(@"major color: %@", self.dataStore.playerCharacter.chosenMajorColor);
                 content = [content stringByReplacingOccurrencesOfString:@"#highestMajorColor" withString:self.dataStore.playerCharacter.chosenMajorColor];
+            }
+            if ([content containsString:@"#highestMajor"])
+            {
+                NSLog(@"highest major: %@", self.dataStore.playerCharacter.chosenMajor);
+                //I'll have to remember to capitalize the Major
+                content = [content stringByReplacingOccurrencesOfString:@"#highestMajor" withString:self.dataStore.playerCharacter.chosenMajor.capitalizedString];
             }
 //            NSLog(@"content: %@", content);
         }
