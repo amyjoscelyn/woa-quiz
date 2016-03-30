@@ -42,7 +42,20 @@
     
     self.gradientLayer = [CAGradientLayer layer];
     self.gradientLayer.frame = self.view.frame;
+//    self.gradientLayer.frame = self.view.bounds; //this seems to have the same result as line above
     [self.view.layer insertSublayer:self.gradientLayer atIndex:0]; //maybe play around with this to see if i can make it not turn gray at the bottom
+    
+    //add a mask layer to cover the entire gradient layer?
+    /*
+     CALayer *maskLayer = [CALayer layer];
+    
+    maskLayer.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.5f].CGColor; //this color can be the current background color of the cells, then I can make the cells clear
+    maskLayer.contents = (id)[[UIImage imageNamed:@"maskImage.png"] CGImage]; //I don't think I need this line of code here
+    
+    maskLayer.contentsGravity = kCAGravityCenter; //what is this?
+    maskLayer.frame = YourLabel.bounds; //these wouold be the view bounds
+    YourLabel.layer.mask = maskLayer;
+     */
     
     self.colorsArray = [[NSMutableArray alloc] init];
     
