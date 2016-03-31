@@ -113,8 +113,8 @@
     NSNumber *primaryMajorValue = highestValueMajor[@"value"];
     NSInteger primaryMajorInteger = primaryMajorValue.integerValue;
 
-    //this determines whether the user is accepted
-    if (primaryMajorInteger >= 10)
+    //this determines whether the user is accepted (REQUIRES primaryMajorInteger)
+    if (primaryMajorInteger > 10)
     {
         self.dataStore.playerCharacter.accepted = YES;
     }
@@ -136,7 +136,7 @@
     NSNumber *secondaryMajorValue = @0;
     NSInteger secondaryMajorInteger = 0;
     
-    //this is testing between the second and third major's value
+    //this is testing between the second and third major's value (RETURNS secondaryMajor and secondaryMajorInteger) (REQUIRES secondMajorInteger, thirdMajorInteger)
     if (secondMajorInteger == thirdMajorInteger)
     {
         //there is a tie.
@@ -154,7 +154,7 @@
         secondaryMajorInteger = secondaryMajorValue.integerValue;
     }
     
-    //this is determining whether the user is a diviner, and skilled at that
+    //this is determining whether the user is a diviner, and skilled at that (REQUIRES primaryMajor/Integer and secondaryMajor/Integer)
     if ([primaryMajor isEqualToString:@"divining"])
     {
         self.dataStore.playerCharacter.diviner = YES;
@@ -453,46 +453,13 @@
         [self setCurrentQuestionOfStory:self.dataStore.questions[0]];
         
         // below resets the properties
-        self.dataStore.playthrough.fontChange = NO;
-        
-        self.dataStore.playerCharacter.charm = 0;
-        self.dataStore.playerCharacter.practical = 0;
-        self.dataStore.playerCharacter.history = 0;
-        self.dataStore.playerCharacter.potions = 0;
-        self.dataStore.playerCharacter.healing = 0;
-        self.dataStore.playerCharacter.divining = 0;
-        self.dataStore.playerCharacter.animalia = 0;
-        
-        self.dataStore.playthrough.creativityChosen = NO;
-        self.dataStore.playthrough.intelligenceChosen = NO;
-        self.dataStore.playthrough.obedienceChosen = NO;
-        self.dataStore.playthrough.empathyChosen = NO;
-        self.dataStore.playthrough.instinctChosen = NO;
-        self.dataStore.playthrough.perseveranceChosen = NO;
-        self.dataStore.playthrough.kindnessChosen = NO;
-        
-        self.dataStore.playthrough.strengthChosen = NO;
-        self.dataStore.playthrough.graceChosen = NO;
-        self.dataStore.playthrough.intellectChosen = NO;
-        self.dataStore.playthrough.imaginationChosen = NO;
-        self.dataStore.playthrough.caringChosen = NO;
-        self.dataStore.playthrough.wondermentChosen = NO;
-        self.dataStore.playthrough.curiosityChosen = NO;
-        
-        self.dataStore.playerCharacter.accepted = NO;
-        self.dataStore.playerCharacter.diviner = NO;
-        self.dataStore.playerCharacter.skilledDiviner = NO;
-        self.dataStore.playerCharacter.chosenMajorValue = 0;
-        self.dataStore.playerCharacter.chosenMajor = @"";
-        self.dataStore.playerCharacter.chosenMajorColor = @"";
-        self.dataStore.playerCharacter.stateOfAcceptance = @"";
-        
+        [self.zhuLi resetAttributes];
         self.textHue = 0;
         self.saturation = 0.8;
         
         [_dataStore saveContext];
         
-        // go to next chapter or restart
+        // go to next chapter or restart here
     }
     [self changeBackgroundColor];
     
