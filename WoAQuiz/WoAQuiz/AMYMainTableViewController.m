@@ -189,58 +189,15 @@
     //all of the above should be in its own method, but still capable of accessing the three dictionary key-value pairs
     //maybe the method can take all three in as parameters
     
-    if ([primaryMajor isEqualToString:@"charm"])
-    {
-        self.bottomColor = [UIColor colorWithRed:192/255.0 green:0.0 blue:0.0 alpha:1.0];
-        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.charm;
-        self.dataStore.playerCharacter.chosenMajorColor = @"red";
-    }
-    else if ([primaryMajor isEqualToString:@"practical"])
-    {
-        self.bottomColor = [UIColor colorWithRed:192/255.0 green:96/255.0 blue:0.0 alpha:1.0];
-        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.practical;
-        self.dataStore.playerCharacter.chosenMajorColor = @"orange";
-    }
-    else if ([primaryMajor isEqualToString:@"history"])
-    {
-        self.bottomColor = [UIColor colorWithRed:0.0 green:96/255.0 blue:192/255.0 alpha:1.0]; //should this just be 0,0,192, like green and red?
-        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.history;
-        self.dataStore.playerCharacter.chosenMajorColor = @"blue";
-    }
-    else if ([primaryMajor isEqualToString:@"potions"])
-    {
-        self.bottomColor = [UIColor colorWithRed:96/255.0 green:0.0 blue:192/255.0 alpha:1.0];
-        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.potions;
-        self.dataStore.playerCharacter.chosenMajorColor = @"purple";
-    }
-    else if ([primaryMajor isEqualToString:@"healing"])
-    {
-        self.bottomColor = [UIColor colorWithRed:0.0 green:192/255.0 blue:0.0 alpha:1.0];
-        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.healing;
-        self.dataStore.playerCharacter.chosenMajorColor = @"green";
-    }
-    else if ([primaryMajor isEqualToString:@"divining"])
-    {
-        self.bottomColor = [UIColor colorWithRed:128/255.0 green:128/255.0 blue:128/255.0 alpha:1.0];
-        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.divining;
-        self.dataStore.playerCharacter.chosenMajorColor = @"silver";
-    }
-    else if ([primaryMajor isEqualToString:@"animalia"])
-    {
-        self.bottomColor = [UIColor colorWithRed:192/255.0 green:192/255.0 blue:0.0 alpha:1.0];
-        self.dataStore.playerCharacter.chosenMajorValue = self.dataStore.playerCharacter.animalia;
-        self.dataStore.playerCharacter.chosenMajorColor = @"yellow";
-    }
-    else
-    {
-        self.bottomColor = [UIColor colorWithRed:255/255.0 green:233/255.0 blue:200/255.0 alpha:1.0];
-    }
+    ZhuLi *zhuLi = [ZhuLi new]; //***************
+    self.bottomColor = [zhuLi colorFromPrimaryMajor:primaryMajor];
+
     [self.colorsArray replaceObjectAtIndex:1 withObject:(id)self.bottomColor.CGColor];
     
     self.gradientLayer.colors = self.colorsArray;
     
     self.dataStore.playerCharacter.chosenMajor = primaryMajor;
-    NSLog(@"the major color is %@", self.dataStore.playerCharacter.chosenMajorColor);
+//    NSLog(@"the major color is %@", self.dataStore.playerCharacter.chosenMajorColor);
 }
 
 - (void)setCurrentQuestionOfStory:(Question *)currentQuestion
@@ -324,7 +281,7 @@
                 }
                 else
                 {
-                    ZhuLi *zhuLi = [ZhuLi new];
+                    ZhuLi *zhuLi = [ZhuLi new];  //***************
                     BOOL passesCheck = NO;
                     
                     for (Prerequisite *prereq in choice.prerequisites)
@@ -403,7 +360,7 @@
         
         if ([content containsString:@"#"])
         {
-            ZhuLi *zhuLi = [ZhuLi new];
+            ZhuLi *zhuLi = [ZhuLi new];  //***************
             content = [zhuLi replaceContent:content];
         }
         cell.textLabel.text = content;
@@ -460,7 +417,7 @@
     
     NSUInteger row = indexPath.row;
     
-    ZhuLi *zhuLi = [ZhuLi new];
+    ZhuLi *zhuLi = [ZhuLi new]; //***************
     
     if (self.currentQuestion.effects.count > 0)
     {
