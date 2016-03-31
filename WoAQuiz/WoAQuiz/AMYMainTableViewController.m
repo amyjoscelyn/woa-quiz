@@ -13,6 +13,7 @@
 @interface AMYMainTableViewController ()
 
 @property (nonatomic, strong) AMYStoryDataStore *dataStore;
+@property (nonatomic, strong) ZhuLi *zhuLi;
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) NSArray *sortedChoices;
 @property (strong, nonatomic) NSMutableArray *choicesArray;
@@ -56,6 +57,8 @@
     maskLayer.frame = YourLabel.bounds; //these wouold be the view bounds
     YourLabel.layer.mask = maskLayer;
      */
+    
+    self.zhuLi = [ZhuLi new];
     
     self.colorsArray = [[NSMutableArray alloc] init];
     
@@ -188,9 +191,8 @@
     
     //all of the above should be in its own method, but still capable of accessing the three dictionary key-value pairs
     //maybe the method can take all three in as parameters
-    
-    ZhuLi *zhuLi = [ZhuLi new]; //***************
-    self.bottomColor = [zhuLi colorFromPrimaryMajor:primaryMajor];
+
+    self.bottomColor = [self.zhuLi colorFromPrimaryMajor:primaryMajor];
 
     [self.colorsArray replaceObjectAtIndex:1 withObject:(id)self.bottomColor.CGColor];
     
@@ -281,13 +283,12 @@
                 }
                 else
                 {
-                    ZhuLi *zhuLi = [ZhuLi new];  //***************
                     BOOL passesCheck = NO;
                     
                     for (Prerequisite *prereq in choice.prerequisites)
                     {
                         //passesCheck must come back as YES to be displayed among the choices
-                        passesCheck = [zhuLi checkPrerequisite:prereq];
+                        passesCheck = [self.zhuLi checkPrerequisite:prereq];
                         
                         if (passesCheck)
                         {
@@ -360,8 +361,7 @@
         
         if ([content containsString:@"#"])
         {
-            ZhuLi *zhuLi = [ZhuLi new];  //***************
-            content = [zhuLi replaceContent:content];
+            content = [self.zhuLi replaceContent:content];
         }
         cell.textLabel.text = content;
         cell.textLabel.textColor = [UIColor colorWithHue:self.textHue saturation:1.0 brightness:0.25 alpha:1.0];
@@ -417,14 +417,12 @@
     
     NSUInteger row = indexPath.row;
     
-    ZhuLi *zhuLi = [ZhuLi new]; //***************
-    
     if (self.currentQuestion.effects.count > 0)
     {
         //this takes care of effects the currentQuestion might incur
         for (Effect *thing in self.currentQuestion.effects)
         {
-            [zhuLi doThe:thing];
+            [self.zhuLi doThe:thing];
         }
     }
     
@@ -445,7 +443,7 @@
                     Choice *selectedChoice = self.choicesArray[row];
                     thing.stringValue = selectedChoice.content;
                 }
-                [zhuLi doThe:thing];
+                [self.zhuLi doThe:thing];
             }
         }
         [self setCurrentQuestionOfStory:selectedChoice.questionOut];
