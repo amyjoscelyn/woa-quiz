@@ -24,7 +24,8 @@
 @property (nonatomic, strong) UIColor *bottomColor;
 
 @property (nonatomic) CGFloat textHue;
-@property (nonatomic) CGFloat saturation;
+
+@property (nonatomic) NSInteger selectedRow;
 
 @end
 
@@ -40,6 +41,8 @@
     [self.dataStore fetchData];
     
     [self setCurrentQuestionOfStory:self.dataStore.playthrough.currentQuestion];
+    
+    self.selectedRow = 10;
     
     self.gradientLayer = [CAGradientLayer layer];
     self.gradientLayer.frame = self.view.frame;
@@ -183,11 +186,6 @@
     {
         self.dataStore.playerCharacter.diviner = NO;
     }
-    
-    //these are NSLogging the results as we go
-//    NSLog(@"major: %@", highestValueMajor);
-//    NSLog(@"second major: %@", secondHighestValueMajor);
-//    NSLog(@"accepted? %d, diviner? %d, skilled diviner? %d", self.dataStore.playerCharacter.accepted, self.dataStore.playerCharacter.diviner, self.dataStore.playerCharacter.skilledDiviner);
     
     //all of the above should be in its own method, but still capable of accessing the three dictionary key-value pairs
     //maybe the method can take all three in as parameters
@@ -417,6 +415,12 @@
     
     NSUInteger row = indexPath.row;
     
+    if (self.selectedRow != row)
+    {
+        self.selectedRow = row;
+        return;
+    }
+    
     if (self.currentQuestion.effects.count > 0)
     {
         //this takes care of effects the currentQuestion might incur
@@ -455,13 +459,14 @@
         // below resets the properties
         [self.zhuLi resetAttributes];
         self.textHue = 0;
-        self.saturation = 0.8;
+//        self.saturation = 0.8;
         
         [_dataStore saveContext];
         
         // go to next chapter or restart here
     }
     [self changeBackgroundColor];
+    self.selectedRow = 10;
     
     [self.tableView reloadData];
 }
