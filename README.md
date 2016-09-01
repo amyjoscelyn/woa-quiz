@@ -1,5 +1,5 @@
 # The Witches of Aeithlynik Story Game
-See if you're likely to be accepted into the prestigious academy of magic!
+See if you're likely to be accepted into the prestigious academy of magic!  Based on the story-in-progress <a href="https://issuu.com/spindlepress/docs/witches_of_aeithlynik__ch_1-7">The Witches of Aeithlynik</a> by Amy Joscelyn and Emily Gildea. 
 
 A type of choose-your-own-adventure game pioneering a reusable app template that can be loaded with external story files.
 
